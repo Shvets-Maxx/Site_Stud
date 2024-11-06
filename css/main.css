@@ -55,6 +55,12 @@ html:root {
 .container .header {
   padding: 20px 20px 0 20px;
   margin-bottom: 40px;
+  height: 100vh;
+}
+.container .header .header_section {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .container .header .header_section .section_nav {
   margin-bottom: 40px;
@@ -101,44 +107,43 @@ html:root {
 .container .header .header_section .section_nav .nav_list li .swiper_button {
   padding: 0;
 }
-.container .header .header_section .section_block__text .section_title {
+.container .header .header_section .header_block {
+  padding: 0 3vw;
+  flex-grow: 1;
+  min-height: 100%;
+}
+.container .header .header_section .header_block .section_block__text .section_title {
   margin-bottom: 20px;
   font: 400 3rem "Zen Dots";
   color: #fff;
 }
-.container .header .header_section .section_block__text .section_text {
+.container .header .header_section .header_block .section_block__text .section_text {
   margin-bottom: 40px;
   font: 400 0.8125rem "Noto Sans";
   color: #fff;
 }
-.container .header .header_section .section_block__text .swiper_button {
+.container .header .header_section .header_block .section_block__text .swiper_button {
   display: none;
 }
-.container .header .header_section .section_block__logo {
+.container .header .header_section .header_block .section_block__logo {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-bottom: 50px;
 }
-.container .header .header_section .section_block__logo .section_photo {
-  position: relative;
+.container .header .header_section .header_block .section_block__logo .section_photo {
   width: 100%;
-  max-width: 450px;
-  height: 300px;
+  height: -moz-min-content;
+  height: min-content;
 }
-.container .header .header_section .section_block__logo .section_photo img {
+.container .header .header_section .header_block .section_block__logo .section_photo img {
   width: 100%;
-  height: 100%;
-  position: absolute;
-  width: 100%;
+  height: auto;
 }
-.container .header .header_section .section_block__logo .section_photo img:nth-child(1) {
-  height: 90%;
-  z-index: 5;
-}
-.container .header .header_section .swiper_button {
+.container .header .header_section .header_block .swiper_button {
   padding: 0 30px;
 }
-.container .header .header_section .swiper_button .swiper_wrapper-button {
+.container .header .header_section .header_block .swiper_button .swiper_wrapper-button {
   max-width: 350px;
 }
 .container .main .main_section-advantages {
@@ -366,7 +371,7 @@ html:root {
   font-size: 12px;
 }
 .container .main .main_section-events .section_container .swiper .swiper-wrapper .swiper-slide .swiper_content .swiper_wrapper .swiper_block-text .swiper_mainText p {
-  font: 400 12px "Roboto";
+  font: 400 12px "Noto Sans";
   color: #fff;
 }
 .container .main .main_section-events .section_container .swiper .swiper-wrapper .swiper-slide .swiper_content .swiper_wrapper .swiper_button {
@@ -440,9 +445,7 @@ html:root {
   grid-area: social;
   display: flex;
   flex-direction: column;
-}
-.container .footer .footer_section .section_block-social .section_block-logo {
-  margin-bottom: 20px;
+  gap: 20px;
 }
 .container .footer .footer_section .section_block-social .section_block-logo img {
   height: 50px;
@@ -453,12 +456,10 @@ html:root {
   -webkit-text-fill-color: transparent;
   font: 400 0.9375rem "Prosto One";
   color: #fff;
-  margin-bottom: 10px;
 }
 .container .footer .footer_section .section_block-social .section_line {
   height: 1px;
   background: #fff;
-  margin-bottom: 20px;
 }
 .container .footer .footer_section .section_block-social .section_networks {
   display: flex;
@@ -474,6 +475,34 @@ html:root {
   color: #fff;
 }
 @media screen and (min-width: 600px) {
+  .container .main .main_section-departaments .mySwiper-1 .swiper-wrapper .swiper-slide .slide_content .slide_wrapper {
+    opacity: 1;
+  }
+  .container .main .main_section-advantages .section_container .section_wrapper {
+    flex-direction: row;
+  }
+  .container .main .main_section-myProjects .section_container .section_block-card:nth-child(-n+6) {
+    display: block;
+  }
+  .container .main .main_section-events .section_container .mySwiper-3 .swiper-wrapper .swiper-slide {
+    background: none;
+  }
+  .container .main .main_section-events .section_container .mySwiper-3 .swiper-wrapper .swiper-slide .swiper_content {
+    opacity: 1;
+  }
+  .container .main .main_section-news .mySwiper-2 .swiper-wrapper .swiper-slide {
+    background: none;
+  }
+  .container .main .main_section-news .mySwiper-2 .swiper-wrapper .swiper-slide .swiper_content {
+    opacity: 1;
+  }
+}
+@media screen and (min-width: 1300px) {
+  .container .main .main_section-myProjects .section_container .section_block-card {
+    display: block;
+  }
+}
+@media screen and (min-width: 768px) {
   .container .header .header_section .header_block {
     gap: 15px;
     display: flex;
@@ -510,39 +539,11 @@ html:root {
     width: 100%;
   }
   .container .header .header_section .header_block .section_block__logo .section_photo {
-    height: 250px;
+    min-height: 250px;
   }
   .container .header .header_section .header_block .swiper_button {
     display: none;
   }
-  .container .main .main_section-departaments .mySwiper-1 .swiper-wrapper .swiper-slide .slide_content .slide_wrapper {
-    opacity: 1;
-  }
-  .container .main .main_section-advantages .section_container .section_wrapper {
-    flex-direction: row;
-  }
-  .container .main .main_section-myProjects .section_container .section_block-card:nth-child(-n+6) {
-    display: block;
-  }
-  .container .main .main_section-events .section_container .mySwiper-3 .swiper-wrapper .swiper-slide {
-    background: none;
-  }
-  .container .main .main_section-events .section_container .mySwiper-3 .swiper-wrapper .swiper-slide .swiper_content {
-    opacity: 1;
-  }
-  .container .main .main_section-news .mySwiper-2 .swiper-wrapper .swiper-slide {
-    background: none;
-  }
-  .container .main .main_section-news .mySwiper-2 .swiper-wrapper .swiper-slide .swiper_content {
-    opacity: 1;
-  }
-}
-@media screen and (min-width: 1300px) {
-  .container .main .main_section-myProjects .section_container .section_block-card {
-    display: block;
-  }
-}
-@media screen and (min-width: 768px) {
   .container .main_section-news .swiper_button {
     padding-left: 30px;
   }
@@ -605,6 +606,12 @@ html:root {
   .container .header .header_section .section_nav .nav_logo {
     margin-right: 9vw;
   }
+  .container .header .header_section .header_block .section_block__text .section_title {
+    font-size: 70px;
+  }
+  .container .header .header_section .header_block .section_block__text .section_text {
+    font-size: 16px;
+  }
   .container .main .main_section-advantages .section_container .section_wrapper .section_block-info:last-child {
     display: block;
   }
@@ -646,6 +653,9 @@ html:root {
     justify-content: start;
     gap: 10px;
   }
+  .container .main .main_section-events .section_container .mySwiper-3 .swiper-wrapper .swiper-slide .swiper_content .swiper_wrapper .swiper_block-text .swiper_mainText p {
+    font-size: 14px;
+  }
   .container .main .main_section-events .section_container .mySwiper-3 .prev-3, .container .main .main_section-events .section_container .mySwiper-3 .next-3 {
     display: none;
   }
@@ -676,5 +686,13 @@ html:root {
   }
   .container .main .main_section-news .swiper_button {
     padding-left: 30px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container .header .header_section .header_block .section_block__text .section_title {
+    font-size: 80px;
+  }
+  .container .header .header_section .header_block .section_block__text .section_text {
+    font-size: 16px;
   }
 }/*# sourceMappingURL=main.css.map */
