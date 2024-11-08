@@ -9,7 +9,7 @@ html:root {
   align-items: center;
 }
 .section_block-title .section_line1 {
-  width: 30vw;
+  width: 80px;
   border: 1px solid rgb(175, 137, 255);
 }
 .section_block-title .section_title {
@@ -53,7 +53,7 @@ html:root {
   background: rgb(34, 34, 34);
 }
 .container .header {
-  padding: 20px 20px 0 20px;
+  padding: 20px 40px 0 40px;
   margin-bottom: 40px;
   height: 100vh;
 }
@@ -63,7 +63,7 @@ html:root {
   flex-direction: column;
 }
 .container .header .header_section .section_nav {
-  margin-bottom: 40px;
+  margin-bottom: 5vh;
   display: flex;
   justify-content: space-between;
 }
@@ -109,7 +109,7 @@ html:root {
 }
 .container .header .header_section .header_block {
   padding: 0 3vw;
-  flex-grow: 1;
+  flex-grow: 0.5;
   min-height: 100%;
 }
 .container .header .header_section .header_block .section_block__text .section_title {
@@ -133,6 +133,7 @@ html:root {
 }
 .container .header .header_section .header_block .section_block__logo .section_photo {
   width: 100%;
+  max-width: 500px;
   height: -moz-min-content;
   height: min-content;
 }
@@ -183,9 +184,6 @@ html:root {
 }
 .container .main .main_section-departaments {
   background: rgba(255, 255, 255, 0);
-}
-.container .main .main_section-departaments .section_block-title .section_line1 {
-  width: 10vw;
 }
 .container .main .main_section-departaments .mySwiper-1 {
   width: 100vw;
@@ -288,16 +286,14 @@ html:root {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-template-rows: auto;
-  grid-row-gap: 20px;
-  grid-column-gap: 20px;
+  grid-gap: 30px;
   margin-bottom: 50px;
-  padding: 0 40px;
+  padding: 0 8vw;
 }
 .container .main .main_section-myProjects .section_container .section_block-card {
   display: none;
   width: 100%;
-  min-width: 300px;
-  max-width: 350px;
+  max-width: 300px;
 }
 .container .main .main_section-myProjects .section_container .section_block-card .section_photo {
   height: 200px;
@@ -469,6 +465,10 @@ html:root {
   width: 28px;
   height: 29px;
 }
+.container .footer .footer_section .section_block-social .section_div {
+  opacity: 0;
+  display: none;
+}
 .container .footer .footer_section .section_block-underText {
   grid-area: underText;
   font: 400 0.75rem "Noto Sans";
@@ -497,7 +497,7 @@ html:root {
     opacity: 1;
   }
 }
-@media screen and (min-width: 1300px) {
+@media screen and (min-width: 1500px) {
   .container .main .main_section-myProjects .section_container .section_block-card {
     display: block;
   }
@@ -580,6 +580,9 @@ html:root {
     display: flex;
     gap: 100px;
   }
+  .container .footer .footer_section .section_block-social .section_div {
+    display: block;
+  }
 }
 @media screen and (min-width: 1024px) {
   .container .header .header_section .section_nav .section_block {
@@ -594,11 +597,11 @@ html:root {
     position: static;
     display: flex;
     gap: 40px;
-    justify-content: end;
+    justify-content: space-between;
     align-items: center;
   }
-  .container .header .header_section .section_nav .section_block .nav_list li {
-    font: 400 14px "Noto Sans";
+  .container .header .header_section .section_nav .section_block .nav_list li, .container .header .header_section .section_nav .section_block .nav_list li .swiper_button div a {
+    font: 400 13px "Noto Sans";
   }
   .container .header .header_section .section_nav .section_block .nav_list li .swiper_button {
     width: 200px;
@@ -611,6 +614,9 @@ html:root {
   }
   .container .header .header_section .header_block .section_block__text .section_text {
     font-size: 16px;
+  }
+  .container .header .header_section .header_block .section_block__logo .section_photo {
+    max-width: 700px;
   }
   .container .main .main_section-advantages .section_container .section_wrapper .section_block-info:last-child {
     display: block;
@@ -654,7 +660,7 @@ html:root {
     gap: 10px;
   }
   .container .main .main_section-events .section_container .mySwiper-3 .swiper-wrapper .swiper-slide .swiper_content .swiper_wrapper .swiper_block-text .swiper_mainText p {
-    font-size: 14px;
+    font-size: 13px;
   }
   .container .main .main_section-events .section_container .mySwiper-3 .prev-3, .container .main .main_section-events .section_container .mySwiper-3 .next-3 {
     display: none;
@@ -689,10 +695,23 @@ html:root {
   }
 }
 @media screen and (min-width: 1200px) {
+  .container .header .header_section .section_nav .section_block .nav_list li, .container .header .header_section .section_nav .section_block .nav_list li .swiper_button div a {
+    font-size: 16px;
+  }
+  .container .header .header_section .section_nav .section_block .nav_list li .swiper_button {
+    width: 250px;
+  }
+  .container .header .header_section .section_nav .section_block .nav_list li .swiper_button .swiper_wrapper-button {
+    max-width: none;
+  }
   .container .header .header_section .header_block .section_block__text .section_title {
     font-size: 80px;
   }
   .container .header .header_section .header_block .section_block__text .section_text {
     font-size: 16px;
+  }
+  .container .header .header_section .header_block .section_block__logo .section_photo {
+    width: 90%;
+    max-width: 700px;
   }
 }/*# sourceMappingURL=main.css.map */

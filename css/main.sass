@@ -7,7 +7,7 @@ html:root
     display: flex
     align-items: center
     .section_line1
-        width: 30vw
+        width: 80px
         border: 1px solid rgba(175, 137, 255, 1)
     .section_title
         white-space: nowrap
@@ -41,7 +41,7 @@ html:root
     grid-template-rows: repeat(3,auto)
     background: rgba(34, 34, 34, 1)
     .header
-        padding: 20px 20px 0 20px 
+        padding: 20px 40px 0 40px 
         margin-bottom: 40px
         height: 100vh
         .header_section
@@ -49,7 +49,7 @@ html:root
             display: flex
             flex-direction: column
             .section_nav
-                margin-bottom: 40px
+                margin-bottom: 5vh
                 // padding: 20px 20px 0 20px 
                 display: flex
                 justify-content: space-between
@@ -86,7 +86,7 @@ html:root
                         div
             .header_block
                 padding: 0 3vw
-                flex-grow: 1
+                flex-grow: 0.5
                 min-height: 100%
                 .section_block__text
                     .section_title
@@ -106,7 +106,7 @@ html:root
                     margin-bottom: 50px
                     .section_photo
                         width: 100%
-                        // max-width: 450px
+                        max-width: 500px
                         height: min-content
                         img
                             width: 100%
@@ -148,8 +148,6 @@ html:root
                     display: none
         .main_section-departaments
             background: rgba(255, 255, 255, 0)
-            .section_block-title .section_line1
-                width: 10vw
             .mySwiper-1
                 width: 100vw
                 height: auto
@@ -246,15 +244,13 @@ html:root
                 display: grid
                 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
                 grid-template-rows: auto
-                grid-row-gap: 20px
-                grid-column-gap: 20px
+                grid-gap: 30px
                 margin-bottom: 50px
-                padding: 0 40px
+                padding: 0 8vw
                 .section_block-card
                     display: none
                     width: 100%
-                    min-width: 300px
-                    max-width: 350px
+                    max-width: 300px
                     .section_photo
                         height: 200px 
                         background: rgba(155, 90, 90, 0.29)
@@ -400,6 +396,9 @@ html:root
                     img
                         width: 28px 
                         height: 29px 
+                .section_div
+                    opacity: 0
+                    display: none
             .section_block-underText
                 grid-area: underText
                 font: 400 .75rem 'Noto Sans'
@@ -446,7 +445,7 @@ html:root
                                 opacity: 1
 
 
-@media screen and (min-width: 1300px)
+@media screen and (min-width: 1500px)
     .container
         .main
             .main_section-myProjects
@@ -518,7 +517,9 @@ html:root
                     .section_wrapper
                         display: flex
                         gap: 100px
-
+                .section_block-social
+                    .section_div
+                        display: block
 @media screen and (min-width: 1024px)
     html
     .container
@@ -535,12 +536,13 @@ html:root
                             position: static
                             display: flex
                             gap: 40px
-                            justify-content: end
+                            justify-content: space-between
                             align-items: center
-                            li
-                                font: 400 14px 'Noto Sans'
+                            li, li .swiper_button div a
+                                font: 400 13px 'Noto Sans'
                             li .swiper_button 
                                 width: 200px
+                                .swiper_wrapper-button 
                     .nav_logo 
                         margin-right: 9vw
                 .header_block
@@ -549,6 +551,12 @@ html:root
                             font-size: 70px
                         .section_text
                             font-size: 16px
+                    .section_block__logo
+                        .section_photo
+                           
+                            max-width: 700px
+                            img
+
         .main
             .main_section-advantages
                 .section_container
@@ -592,7 +600,7 @@ html:root
                                                 gap: 10px
                                             .swiper_mainText
                                                 p
-                                                    font-size: 14px
+                                                    font-size: 13px
                         .prev-3 , .next-3
                             display: none
 
@@ -627,12 +635,30 @@ html:root
     .container
         .header
             .header_section
+                .section_nav
+                    .section_block
+                        .nav_list
+                            li , li .swiper_button div a
+                                font-size: 16px
+                            li .swiper_button 
+                                width: 250px
+                                .swiper_wrapper-button 
+                                    max-width: none
+                            
                 .header_block
                     .section_block__text
                         .section_title
                             font-size: 80px
                         .section_text
                             font-size: 16px
+                            .header_block
+
+                    .section_block__logo
+                        .section_photo
+                            width: 90% 
+                            max-width: 700px
+                            img
+
 
 
 
