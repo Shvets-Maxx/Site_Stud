@@ -118,7 +118,7 @@ html, body {
 }
 .container .main .section_main .section_container .section_wrapper .section_text p {
   color: #fff;
-  font: 400 13px "Noto Sans";
+  font: 400 14px "Noto Sans";
 }
 .container .main .section_main .section_container .section_wrapper .section_textarea {
   padding: 15px 15px 0 15px;
@@ -137,7 +137,7 @@ html, body {
   outline: none;
 }
 .container .main .section_main .section_container .section_wrapper .section_button {
-  padding: 15px 15px 20px 15px;
+  padding: 15px;
   display: flex;
   justify-content: end;
 }
@@ -152,7 +152,7 @@ html, body {
 }
 .container .main .section_main .section_container .section_wrapper .section_button .swiper_button .button_reset img {
   aspect-ratio: 1/1;
-  height: 23px;
+  height: 25px;
 }
 .container .main .section_main .section_container .section_wrapper .section_button .swiper_button .button_reset:hover {
   cursor: pointer;
@@ -376,6 +376,12 @@ html, body {
   .container .header .header_section .header_block .section_block__text .section_text {
     font-size: 16px;
   }
+  .container .main {
+    height: calc(100vh - 100px);
+  }
+  .container .main .section_main {
+    height: 100%;
+  }
   .container .main .section_main .section_container .section_title h1 {
     font-size: 28px;
   }
@@ -385,11 +391,24 @@ html, body {
   .container .main .section_main .section_container form .section_wrapper .section_text {
     padding: 20px;
   }
+  .container .main .section_main .section_container form .section_wrapper .section_text p {
+    font-size: 16px;
+  }
   .container .main .section_main .section_container form .section_wrapper .section_textarea {
     padding: 20px 20px 0 20px;
   }
+  .container .main .section_main .section_container form .section_wrapper .section_textarea textarea {
+    font-size: 14px;
+  }
   .container .main .section_main .section_container form .section_wrapper .section_button {
-    padding: 20px 20px 25px 20px;
+    padding: 20px;
+  }
+  .container .main .section_main .section_block-img {
+    height: 100%;
+  }
+  .container .main .section_main .section_block-img img {
+    height: 100%;
+    width: auto;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -398,5 +417,93 @@ html, body {
   }
   .container .header .header_section .header_block .section_block__text .section_text {
     font-size: 16px;
+  }
+  .container .main {
+    height: calc(100vh - 100px);
+  }
+  .container .main .section_main {
+    height: 100%;
+  }
+  .container .main .section_main .section_container .section_title h1 {
+    font-size: 34px;
+  }
+  .container .main .section_main .section_container form .section_wrapper {
+    max-width: 700px;
+    height: 300px;
+  }
+  .container .main .section_main .section_container form .section_wrapper .section_text {
+    padding: 20px;
+  }
+  .container .main .section_main .section_container form .section_wrapper .section_text p {
+    font-size: 18px;
+  }
+  .container .main .section_main .section_container form .section_wrapper .section_textarea {
+    padding: 20px 20px 0 20px;
+  }
+  .container .main .section_main .section_container form .section_wrapper .section_textarea textarea {
+    font-size: 16px;
+  }
+  .container .main .section_main .section_container form .section_wrapper .section_button {
+    padding: 20px 20px 20px 20px;
+  }
+  .container .main .section_main .section_block-img {
+    height: 100%;
+  }
+  .container .main .section_main .section_block-img img {
+    height: 100%;
+    width: auto;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .container .header .header_section .header_block .section_block__text .section_title {
+    font-size: 80px;
+  }
+  .container .header .header_section .header_block .section_block__text .section_text {
+    font-size: 16px;
+  }
+  .container .main {
+    height: calc(100vh - 100px);
+  }
+  .container .main .section_main {
+    height: 100%;
+  }
+  .container .main .section_main .section_container .section_title h1 {
+    font-size: 42px;
+  }
+  .container .main .section_main .section_container form .section_wrapper {
+    max-width: 850px;
+    height: 400px;
+  }
+  .container .main .section_main .section_container form .section_wrapper .section_text {
+    padding: 30px;
+  }
+  .container .main .section_main .section_container form .section_wrapper .section_text p {
+    font-size: 24px;
+  }
+  .container .main .section_main .section_container form .section_wrapper .section_textarea {
+    padding: 30px 30px 0 30px;
+  }
+  .container .main .section_main .section_container form .section_wrapper .section_textarea textarea {
+    font-size: 20px;
+  }
+  .container .main .section_main .section_container form .section_wrapper .section_button {
+    padding: 30px;
+  }
+  .container .main .section_main .section_container form .section_wrapper .section_button .swiper_button .button_reset img {
+    height: 34px;
+  }
+  .container .main .section_main .section_container form .section_wrapper .section_button .swiper_button .swiper_wrapper-button {
+    width: 180px;
+    padding: 10px 0;
+  }
+  .container .main .section_main .section_container form .section_wrapper .section_button .swiper_button .swiper_wrapper-button button {
+    font-size: 18px;
+  }
+  .container .main .section_main .section_block-img {
+    height: 100%;
+  }
+  .container .main .section_main .section_block-img img {
+    height: 100%;
+    width: auto;
   }
 }/*# sourceMappingURL=anonAppeal.css.map */
