@@ -22,9 +22,7 @@ button
 
 html,body
     height: 100%
-p
-    font: 400 12px 'Noto Sans'
-    color: #fff
+
 .container
     display: grid
     grid-template-rows: auto 1fr auto
@@ -173,15 +171,36 @@ p
 
 
 
-@media screen and (min-width: 900px)
+@media screen and (min-width: 440px)
+    .container
+        .main
+            .section_wrraper
+                #paginated-list
+                    li .slide_text .text p
+                        font-size: 12px
+
+
+@media screen and (min-width: 800px)
+    .container
+        .main
+            .section_wrraper
+                #paginated-list
+                    grid-template-columns: repeat(3,1fr) 
+                    grid-template-rows: repeat(2,250px) 
+                    max-width: 1009px
+                    li
+                        max-width: none
+          
+@media screen and (min-width: 1300px)
     .container
         .main
             .section_wrraper
                 #paginated-list
                     grid-template-columns: repeat(4,1fr) 
                     grid-template-rows: repeat(2,300px) 
-                    
-
+                    max-width: none
+                    li
+                        max-width: none
 
 
 @media screen and (min-width: 630px)
