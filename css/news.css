@@ -95,42 +95,24 @@ p {
   padding: 0;
 }
 .container .main {
-  padding: 20px;
+  position: relative;
   margin-bottom: 20px;
 }
 .container .main .section_main {
   display: flex;
   flex-direction: column;
-  gap: 30px;
 }
-.container .main .section_main .section_container {
-  width: 100%;
+.container .main .section_main .section_title {
+  padding: 20px 20px 0 20px;
 }
-.container .main .section_main .section_container .section_title h1 {
+.container .main .section_main .section_title h1 {
   font: 400 24px "Prosto One";
   color: #D7C3FF;
   margin-bottom: 20px;
 }
-.container .main .section_main .section_container .section_block-text {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.container .main .section_main .section_container .section_block-text p {
-  font: 400 12px "Noto Sans";
-}
-.container .main .section_main .section_block-img {
-  display: flex;
-  align-items: flex-end;
-  gap: 10px;
-}
-.container .main .section_main .section_block-img img {
-  width: 150px;
-  max-height: 600px;
-}
-.container .main .section_main .section_block-img p {
-  padding-bottom: 20px;
-  text-align: end;
+.container .main .section_main .section_wrraper {
+  display: grid;
+  justify-content: center;
 }
 .container .footer {
   padding: 20px 20px 40px 20px;
@@ -225,16 +207,15 @@ p {
   font: 400 0.75rem "Noto Sans";
   color: #fff;
 }
-@media screen and (min-width: 630px) {
-  .container .main {
-    min-height: 400px;
-    height: calc(90vh - 100px);
+@media screen and (min-width: 900px) {
+  .container .main .section_wrraper #paginated-list {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 300px);
   }
+}
+@media screen and (min-width: 630px) {
   .container .main .section_main {
     height: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
   }
   .container .main .section_main .section_block-img {
     display: flex;
@@ -295,9 +276,6 @@ p {
   }
   .container .header .header_section .header_block .swiper_button {
     display: none;
-  }
-  .container .main {
-    padding: 20px 40px;
   }
   .container .main .section_main .section_container {
     gap: 15vw;
@@ -371,7 +349,6 @@ p {
   }
   .container .main .section_main {
     height: 100%;
-    gap: 10vw;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -436,4 +413,4 @@ p {
   .container .main .section_main .section_block-img p {
     font-size: 24px;
   }
-}/*# sourceMappingURL=usefulTips.css.map */
+}/*# sourceMappingURL=news.css.map */

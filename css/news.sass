@@ -73,37 +73,22 @@ p
                         padding: 0
                         div
     .main
-        padding:  20px
+        position: relative
         margin-bottom: 20px
         .section_main
             display: flex
             flex-direction: column
-            gap: 30px
-            .section_container
-                width: 100%
-                .section_title 
-                    h1
-                        font: 400 24px 'Prosto One'
-                        color: #D7C3FF
-                        margin-bottom: 20px
-                .section_block-text
-                    display: flex
-                    flex-direction: column
-                    gap: 20px
-                    p
-                        font: 400 12px 'Noto Sans' 
-            .section_block-img
-                display: flex
-                align-items: flex-end
-                gap: 10px
-                img
-                    width: 150px
-                    max-height: 600px
-                p
-                    padding-bottom: 20px
-                    text-align: end
-
-
+            
+            .section_title 
+                padding: 20px 20px 0 20px
+                h1
+                    font: 400 24px 'Prosto One'
+                    color: #D7C3FF
+                    margin-bottom: 20px
+            .section_wrraper
+                
+                display: grid
+                justify-content: center
     .footer
         padding: 20px 20px 40px 20px
         width: 100vw
@@ -188,18 +173,25 @@ p
 
 
 
+@media screen and (min-width: 900px)
+    .container
+        .main
+            .section_wrraper
+                #paginated-list
+                    grid-template-columns: repeat(4,1fr) 
+                    grid-template-rows: repeat(2,300px) 
+                    
+
 
 
 @media screen and (min-width: 630px)
     .container
         .main
-            min-height: 400px
-            height: calc(90vh - 100px)
+            // min-height: 400px
+            // height: calc(90vh - 100px)
             .section_main
                 height: 100%
-                display: flex
-                justify-content: space-between
-                flex-direction: row
+                
                 .section_container
                 .section_block-img
                     display: flex
@@ -253,7 +245,7 @@ p
                         display: none
 
         .main
-            padding: 20px 40px
+            // padding: 20px 40px
             .section_main
 
                 .section_container
@@ -327,7 +319,6 @@ p
         .main
             .section_main
                 height: 100%
-                gap: 10vw
                 .section_container
 
                                     

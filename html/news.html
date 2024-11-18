@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../css/news.css">
+    <title>main</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+    .hidden {
+    display: none;
+    }
+
+    .pagination-container {
+    
+    display: flex;
+    align-items: center;
+    /* position: absolute; */
+    bottom: 0;
+    padding: 1rem 0;
+    justify-content: center;
+    }
+
+    .pagination-number,
+    .pagination-button{
+    font-size: 1.1rem;
+    background-color: transparent;
+    border: none;
+    margin: 0.25rem 0.25rem;
+    cursor: pointer;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: .2rem;
+    }
+
+    .pagination-number:hover,
+    .pagination-button:not(.disabled):hover {
+    background: #fff;
+    }
+
+    .pagination-number.active {
+    color: #fff;
+    background: #0085b6;
+    }
+    #paginated-list li{
+        color: #fff;
+        width: 100%;
+        min-width: 200px;
+    }
+    #paginated-list{
+        display: grid;
+        grid-template-columns: repeat(2,1fr) ;
+        grid-template-rows: repeat(2,200px) ;
+        justify-items: center;
+        gap: 20px;
+        width: 100vw;
+        justify-content: center;
+        padding: 0 20px
+        
+    }
+    .slide_photo{
+        display: flex;
+        align-items: end;
+        background-repeat: no-repeat;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        width: 100% !important;
+        
+        border-radius: 20px;
+    }
+    .slide_text{
+        border-radius: 20px;
+        background: rgba(176, 114, 114, 0.5);
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        padding: 10px;
+        width: 100%;
+    }
+    .slide_text .text{
+        width: 100%;
+    }
+    .slide_text  .date{
+        width: 100%;
+    }
+    .slide_text .text p {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 100%;
+        display: inline-block;
+        -webkit-box-orient: vertical;
+        line-clamp: 2;
+    }
+    .slide_text .date p {
+
+        width: 100%;
+        display: inline-block;
+
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <section class="header_section">
+                <nav class="section_nav">
+                    <img class="nav_logo" src="../img/logoIATE.png" alt="">
+                    <div class="section_block">
+                        <div class="section_burger">
+                            <div class="burger_menu"></div>
+                            <div class="burger_menu"></div>
+                            <div class="burger_menu"></div>
+                        </div>
+                        <ul class="nav_list">
+                            <li>Головна</li>
+                            <li>Новини</li>
+                            <li>Актуальні опитування</li>
+                            <li>Студенту</li>
+                            <li>Магазин</li>
+                            <li>
+                                <div class="swiper_button">
+                                    <div class="swiper_wrapper-button">
+                                        <a href="/">Стати учасником</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </section>
+        </header>
+        <main class="main">
+            <section class="section_main">
+                <div class="section_title">
+                    <h1>Новини</h1>
+                </div>
+                <div class="section_wrraper">
+                    <ul id="paginated-list" data-current-page="1" aria-live="polite">
+                        <li>
+                            <div class="slide_photo" style="background-image: url(../img/newsPhoto-6.png);">
+                                <div class="slide_text">
+                                    <div class="text">
+                                        <p>Збір на пікап випускнику НН ІАТЕ</p>
+                                    </div>
+                                    <div class="date">
+                                        <p>07.03.2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="slide_photo" style="background-image: url(../img/newsPhoto-6.png);">
+                                <div class="slide_text">
+                                    <div class="text">
+                                        <p>Збір на пікап випускнику НН ІАТЕ</p>
+                                    </div>
+                                    <div class="date">
+                                        <p>07.03.2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="slide_photo" style="background-image: url(../img/newsPhoto-6.png);">
+                                <div class="slide_text">
+                                    <div class="text">
+                                        <p>Збір на пікап випускнику НН ІАТЕ</p>
+                                    </div>
+                                    <div class="date">
+                                        <p>07.03.2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="slide_photo" style="background-image: url(../img/newsPhoto-6.png);">
+                                <div class="slide_text">
+                                    <div class="text">
+                                        <p>Збір на пікап випускнику НН ІАТЕ</p>
+                                    </div>
+                                    <div class="date">
+                                        <p>07.03.2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="slide_photo" style="background-image: url(../img/newsPhoto-6.png);">
+                                <div class="slide_text">
+                                    <div class="text">
+                                        <p>Збір на пікап випускнику НН ІАТЕ</p>
+                                    </div>
+                                    <div class="date">
+                                        <p>07.03.2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="slide_photo" style="background-image: url(../img/newsPhoto-6.png);">
+                                <div class="slide_text">
+                                    <div class="text">
+                                        <p>Збір на пікап випускнику НН ІАТЕ</p>
+                                    </div>
+                                    <div class="date">
+                                        <p>07.03.2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="slide_photo" style="background-image: url(../img/newsPhoto-6.png);">
+                                <div class="slide_text">
+                                    <div class="text">
+                                        <p>Збір на пікап випускнику НН ІАТЕ</p>
+                                    </div>
+                                    <div class="date">
+                                        <p>07.03.2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="slide_photo" style="background-image: url(../img/newsPhoto-6.png);">
+                                <div class="slide_text">
+                                    <div class="text">
+                                        <p>Збір на пікап випускнику НН ІАТЕ</p>
+                                    </div>
+                                    <div class="date">
+                                        <p>07.03.2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>I</li>
+                        <li>Item 3</li>
+                        <li>Item 4</li>
+                        <li>Item 5</li>
+                        <li>Item 6</li>
+                        <li>Item 7</li>
+                        <li>Item 8</li>
+                    </ul>
+                    <nav class="pagination-container">
+                        <button class="pagination-button" id="prev-button" aria-label="Previous page" title="Previous page">
+                        &lt;
+                        </button>
+    
+                        <div id="pagination-numbers">
+    
+                        </div>
+    
+                        <button class="pagination-button" id="next-button" aria-label="Next page" title="Next page">
+                        &gt;
+                        </button>
+                    </nav>
+                </div>
+                
+            </section>
+        </main>
+        <footer class="footer">
+            <section class="footer_section">
+                <div class="section_block-contact">
+                    <div class="section_wrapper-contact">
+                        <div class="">1</div>
+                        <div class="section_block-text">
+                            <img src="../img/Phone.png" alt="">
+                            <p>+380-666-6666</p>
+                        </div>
+                        <div class="section_block-text">
+                            <img src="../img/Mail.png" alt="">
+                            <p>Max2016@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="section_block-info">
+                        <div class="section_wrapper-info">
+                            <p>Про нас</p>
+                            <p>Відділи</p>
+                            <p>Учасники</p>
+                        </div>
+                        <div class="section_wrapper-info">
+                            <p>Підтримка</p>
+                            <p>Конфіденційність</p>
+                            <p>Анонімне звернення</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="section_block-social">
+                    <div class="section_div" >pdfd</div>
+                    <div class="section_block-logo">
+                        <img src="../img/logosite2.png" alt="">
+                        <img src="../img/iate2.png" alt="">
+                        <img src="../img/kpiLogo.png" alt="">
+                    </div>
+                    <p class="section_text">By IT-відділ СР ІАТЕ</p>
+                    <div class="section_line"></div>
+                    <div class="section_networks">
+                        <img src="../img/Discord2.png" alt="">
+                        <img src="../img/Telegram2.png" alt="">
+                        <img src="../img/Social Linkedin2.png" alt="">
+                        <img src="../img/inst2.png" alt="">
+                    </div>
+                </div>
+                <div class="section_block-underText">
+                    <p>Copyright 2024. All rights reserved</p>
+                    <div class="section_wrapper">
+                        <p>ggggggggg@lll.kpi.ua</p>
+                        <p>+38(097) 000-00-00</p>
+                    </div>
+                    
+                </div>
+            </section>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        const paginationNumbers = document.getElementById("pagination-numbers");
+        const paginatedList = document.getElementById("paginated-list");
+        const listItems = paginatedList.querySelectorAll("li");
+        const nextButton = document.getElementById("next-button");
+        const prevButton = document.getElementById("prev-button");
+        let paginationLimit ;
+        const setPaginationLimit = () => {
+            if (window.innerWidth > 900) {
+                paginationLimit = 8;
+            } else if (window.innerWidth > 320) {
+                paginationLimit = 4;
+            }
+        };
+        setPaginationLimit()
+        window.addEventListener(('resize'), () => {
+            setPaginationLimit()
+        })
+        const pageCount = Math.ceil(listItems.length / paginationLimit);
+        let currentPage = 1;
+
+        const disableButton = (button) => {
+        button.classList.add("disabled");
+        button.setAttribute("disabled", true);
+        };
+
+        const enableButton = (button) => {
+        button.classList.remove("disabled");
+        button.removeAttribute("disabled");
+        };
+
+        const handlePageButtonsStatus = () => {
+        if (currentPage === 1) {
+            disableButton(prevButton);
+        } else {
+            enableButton(prevButton);
+        }
+
+        if (pageCount === currentPage) {
+            disableButton(nextButton);
+        } else {
+            enableButton(nextButton);
+        }
+        };
+
+        const handleActivePageNumber = () => {
+        document.querySelectorAll(".pagination-number").forEach((button) => {
+            button.classList.remove("active");
+            const pageIndex = Number(button.getAttribute("page-index"));
+            if (pageIndex == currentPage) {
+            button.classList.add("active");
+            }
+        });
+        };
+
+        const appendPageNumber = (index) => {
+        const pageNumber = document.createElement("button");
+        pageNumber.className = "pagination-number";
+        pageNumber.innerHTML = index;
+        pageNumber.setAttribute("page-index", index);
+        pageNumber.setAttribute("aria-label", "Page " + index);
+
+        paginationNumbers.appendChild(pageNumber);
+        };
+
+        const getPaginationNumbers = () => {
+        for (let i = 1; i <= pageCount; i++) {
+            appendPageNumber(i);
+        }
+        };
+
+        const setCurrentPage = (pageNum) => {
+        currentPage = pageNum;
+
+        handleActivePageNumber();
+        handlePageButtonsStatus();
+        
+        const prevRange = (pageNum - 1) * paginationLimit;
+        const currRange = pageNum * paginationLimit;
+
+        listItems.forEach((item, index) => {
+            item.classList.add("hidden");
+            if (index >= prevRange && index < currRange) {
+            item.classList.remove("hidden");
+            }
+        });
+        };
+
+        window.addEventListener("load", () => {
+        getPaginationNumbers();
+        setCurrentPage(1);
+
+        prevButton.addEventListener("click", () => {
+            setCurrentPage(currentPage - 1);
+        });
+
+        nextButton.addEventListener("click", () => {
+            setCurrentPage(currentPage + 1);
+        });
+
+        document.querySelectorAll(".pagination-number").forEach((button) => {
+            const pageIndex = Number(button.getAttribute("page-index"));
+
+            if (pageIndex) {
+            button.addEventListener("click", () => {
+                setCurrentPage(pageIndex);
+            });
+            }
+        });
+        });
+
+</script>
+</body>
+</html>
+<!-- <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="../img/newsPhoto-2.png" alt=""></div>
+      <div class="swiper-slide"><img src="../img/newsPhoto-3.png" alt=""></div>
+      <div class="swiper-slide"><img src="../img/newsPhoto-4.png" alt=""></div>
+      <div class="swiper-slide"><img src="../img/newsPhoto-7.png" alt=""></div>
+      <div class="swiper-slide"><img src="../img/newsPhoto-6.png" alt=""></div>
+      <div class="swiper-slide"><img src="../img/newsPhoto-5.png" alt=""></div>
+      <div class="swiper-slide"><img src="../img/newsPhoto-8.png" alt=""></div>
+      <div class="swiper-slide"><img src="../img/newsPhoto-1.png" alt=""></div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+</div> -->
