@@ -137,21 +137,50 @@ p {
   align-items: center;
 }
 .container .main .main_section-info .container .section_block-leader .section_container img {
-  width: 200px;
+  max-width: 250px;
 }
-.container .main .main_section-team .container .section_wrapper {
-  width: -moz-min-content;
-  width: min-content;
+.container .main .main_section-team {
+  background: rgba(0, 0, 0, 0.56);
 }
-.container .main .main_section-team .container .section_wrapper .section_block .section_photo-people {
-  width: 200px;
+.container .main .main_section-team .section_block-title {
+  display: flex;
+  justify-self: center;
 }
-.container .main .main_section-team .container .section_wrapper .section_name {
+.container .main .main_section-team .section_block-title .title {
+  font: 400 20px "Prosto One";
+  color: #ff9153;
+}
+.container .main .main_section-team .container_section-team {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 200px));
+  justify-content: center;
+  gap: 20px;
+}
+.container .main .main_section-team .container_section-team .section_wrapper {
+  width: 100%;
+}
+.container .main .main_section-team .container_section-team .section_wrapper .section_block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.container .main .main_section-team .container_section-team .section_wrapper .section_block .section_photo-people {
+  width: 100%;
+}
+.container .main .main_section-team .container_section-team .section_wrapper .section_name {
   display: flex;
   justify-content: space-between;
 }
-.container .main .main_section-team .container .section_wrapper .section_name .section_social img {
+.container .main .main_section-team .container_section-team .section_wrapper .section_name .block_social img {
   height: 20px;
+}
+.container .main .main_section-team .container_section-team .section_wrapper .block_position {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.container .main .main_section-team .container_section-team .section_wrapper .block_position .block_arrow img {
+  max-width: 28px;
 }
 .container .footer {
   padding: 20px 20px 40px 20px;
@@ -249,7 +278,7 @@ p {
 @media screen and (min-width: 630px) {
   .container .main {
     min-height: 400px;
-    height: calc(90vh - 100px);
+    min-height: calc(90vh - 100px);
   }
   .container .main .section_main {
     height: 100%;

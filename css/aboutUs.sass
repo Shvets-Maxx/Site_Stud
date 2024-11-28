@@ -109,20 +109,43 @@ p
                         flex-direction: column
                         align-items: center
                         img
-                            width: 200px
+                            max-width: 250px
         .main_section-team
-            .container
+            background: rgba(0,0,0,.56)
+            .section_block-title
+                display: flex
+                justify-self: center
+                .title
+                    font: 400 20px 'Prosto One'
+                    color: #ff9153
+            .container_section-team
+                display: grid
+                grid-template-columns: repeat(auto-fit ,minmax(100px ,200px))
+                justify-content: center
+                gap: 20px
                 .section_wrapper
-                    width: min-content
+                    width: 100%
                     .section_block
+                        display: flex
+                        flex-direction: column
+                        gap: 10px
                         .section_photo-people
-                            width: 200px
+                            width: 100%
                     .section_name
                         display: flex
                         justify-content: space-between
-                        .section_social
+                        .block_social
                             img
                                 height: 20px
+                    .block_position
+                        display: flex
+                        align-items: flex-end
+                        justify-content: space-between
+                        p
+                        .block_arrow
+                            img
+                                max-width: 28px
+        
 
 
 
@@ -217,7 +240,7 @@ p
     .container
         .main
             min-height: 400px
-            height: calc(90vh - 100px)
+            min-height: calc(90vh - 100px)
             .section_main
                 height: 100%
                 display: flex
