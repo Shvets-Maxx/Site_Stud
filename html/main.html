@@ -10,10 +10,11 @@
 </head>
 <body>
     <div class="container">
+        <img class="burger_bg" src="/img/image 16.png" alt="">
         <header class="header">
             <section class="header_section">
                 <nav class="section_nav">
-                    <img class="nav_logo" src="../img/logoIATE.png" alt="">
+                    <img class="nav_logo " src="../img/logoIATE.png" alt="">
                     <div class="section_block">
                         <div class="section_burger">
                             <div class="burger_menu"></div>
@@ -26,17 +27,18 @@
                             <li>Актуальні опитування</li>
                             <li>Студенту</li>
                             <li>Магазин</li>
+                            <li>Про нас</li>
                             <li>
                                 <div class="swiper_button">
                                     <div class="swiper_wrapper-button">
-                                        <a href="/">Стати учасником</a>
+                                        <a class="nav_link" href="/">Стати учасником</a>
                                     </div>
                                 </div>
                             </li>
                         </ul>
                     </div>
                 </nav>
-                <div class="header_block">
+                <div class="header_block ">
                     <div class="section_block__text">
                         <h1 class="section_title">CP IATE</h1>
                         <p class="section_text">
@@ -53,11 +55,11 @@
                             <img src="../img/protemej.png" alt="">
                         </div>
                     </div>
-                    <div class="swiper_button">
+                    <!-- <div class="swiper_button">
                         <div class="swiper_wrapper-button">
                             <a href="/">Стати учасником</a>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </section>
         </header>
@@ -121,7 +123,7 @@
                                 </p>
                                 <div class="swiper_button">
                                     <div class="swiper_wrapper-button">
-                                        <a href="/">Читати</a>
+                                        <a href="/">Дізнатися більше</a>
                                     </div>
                                 </div>
                             </div>
@@ -136,7 +138,7 @@
                                     Організовує різноманітні події в інституті, від культурних до наукових, сприяючи активному життю студентської громади.                                </p>
                                 <div class="swiper_button">
                                     <div class="swiper_wrapper-button">
-                                        <a href="/">Читати</a>
+                                        <a href="/">Дізнатися більше</a>
                                     </div>
                                 </div>
                             </div>
@@ -150,7 +152,7 @@
                                     Забезпечує студентів актуальною інформацією про події та освітні процеси, а також підтримує імідж інституту в Інтернеті.                                </p>
                                 <div class="swiper_button">
                                     <div class="swiper_wrapper-button">
-                                        <a href="/">Читати</a>
+                                        <a href="/">Дізнатися більше</a>
                                     </div>
                                 </div>
                             </div>
@@ -164,7 +166,7 @@
                                     Забезпечує зв'язок між студентами та адміністрацією, організовує освітні заходи та вирішує проблеми, пов'язані з навчанням.                            </div>
                                 <div class="swiper_button">
                                     <div class="swiper_wrapper-button">
-                                        <a href="/">Читати</a>
+                                        <a href="/">Дізнатися більше</a>
                                     </div>
                                 </div>
                             </div>
@@ -440,20 +442,23 @@
             slidesPerView: 1.5,
             spaceBetween: 20
             },
-            600: {
+            721: {
             slidesPerView: 2,
             spaceBetween: 20,
             centeredSlides: false,
             },
-            800: {
-            centeredSlides: false,
+            1050: {
+            centeredSlides: true,
             slidesPerView: 3,
             spaceBetween: 20
             },
-            1200: {
+            1432: {
             centeredSlides: false,
             slidesPerView: 4,
             spaceBetween: 20
+            },
+            1550: {
+            spaceBetween: 30
             }
         }
     });
@@ -530,7 +535,7 @@ function checkScreenSize() {
                 slidesPerView: 2,
                 spaceBetween: 20
                 },
-                850: {
+                900: {
                     loop: false,
                 slidesPerView: 3,
                 spaceBetween: 20

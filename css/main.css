@@ -1,10 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Prosto+One&family=Zen+Dots&display=swap");
 html:root {
-  --swiper-navigation-size: 26px;
+  --swiper-navigation-size: 35px;
 }
 
 .section_block-title {
-  margin-bottom: 20px;
   display: flex;
   align-items: center;
 }
@@ -31,11 +30,11 @@ html:root {
   padding: 10px 0;
   text-align: center;
   min-width: 150px;
-  max-width: 205px;
+  max-width: 200px;
   height: -moz-min-content;
   height: min-content;
   border: 1px solid rgb(255, 117, 40);
-  border-radius: 25px;
+  border-radius: 225px;
 }
 .swiper_button .swiper_wrapper-button a {
   font: 400 0.8125rem "Noto Sans";
@@ -47,13 +46,32 @@ html:root {
   width: 20px;
 }
 
+.h-100vh {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hidden {
+  display: none !important;
+}
+
 .container {
   display: grid;
   grid-template-rows: repeat(3, auto);
   background: rgb(34, 34, 34);
 }
+.container .burger_bg {
+  display: none;
+  position: absolute;
+  width: 100%;
+  max-height: 500px;
+  min-height: 400px;
+  top: 57%;
+  left: 50%;
+  transform: translate(-50%, -57%);
+}
 .container .header {
-  padding: 20px 40px 0 40px;
+  padding: 30px 40px 0 40px;
   margin-bottom: 40px;
   height: 100vh;
 }
@@ -63,11 +81,14 @@ html:root {
   flex-direction: column;
 }
 .container .header .header_section .section_nav {
+  position: relative;
   margin-bottom: 5vh;
+  gap: 3.5vw;
   display: flex;
   justify-content: space-between;
 }
-.container .header .header_section .section_nav img {
+.container .header .header_section .section_nav .nav_logo {
+  display: block;
   width: 83px;
   height: 67px;
 }
@@ -76,38 +97,69 @@ html:root {
   align-items: center;
 }
 .container .header .header_section .section_nav .section_block .section_burger {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 }
 .container .header .header_section .section_nav .section_block .section_burger .burger_menu {
   border: 1.5px solid #fff;
   border-radius: 30px;
-  width: 25px;
+  width: 30px;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 .container .header .header_section .section_nav .section_block .section_burger .burger_menu.active:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translate(6px, 6px);
 }
 .container .header .header_section .section_nav .section_block .section_burger .burger_menu.active:nth-child(2) {
   opacity: 0;
 }
 .container .header .header_section .section_nav .section_block .section_burger .burger_menu.active:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+.container .header .header_section .section_nav .section_block .section_burger .burger_menu.active {
+  border-color: #D7C3FF;
+}
+.container .header .header_section .section_nav .section_block .section_burger:hover .burger_menu {
+  border-color: #D7C3FF;
 }
 .container .header .header_section .section_nav .nav_list {
   position: absolute;
-  top: 200px;
+  top: 100px;
   display: none;
 }
-.container .header .header_section .section_nav .nav_list li {
-  font: 400 1rem "Noto Sans";
+.container .header .header_section .section_nav .nav_list li, .container .header .header_section .section_nav .nav_list .swiper_button div a {
+  font: 400 24px "Noto Sans";
   color: #fff;
 }
 .container .header .header_section .section_nav .nav_list li .swiper_button {
   padding: 0;
 }
+.container .header .header_section .section_nav .nav_list li .swiper_button .swiper_wrapper-button {
+  margin: 0 auto;
+  padding: 0;
+  text-align: start;
+  min-width: none;
+  max-width: none;
+  height: auto;
+  border: none;
+  border-radius: 0;
+}
+.container .header .header_section .section_nav .nav_list li {
+  cursor: pointer;
+  margin-bottom: 25px;
+}
+.container .header .header_section .section_nav .nav_list li:hover, .container .header .header_section .section_nav .nav_list .nav_link:hover {
+  color: #FFC657;
+}
+.container .header .header_section .section_nav .nav_list li:last-child {
+  margin: 0;
+}
 .container .header .header_section .header_block {
+  display: block;
   padding: 0 3vw;
   flex-grow: 0.5;
   min-height: 100%;
@@ -148,10 +200,10 @@ html:root {
   max-width: 350px;
 }
 .container .main .main_section-advantages {
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 .container .main .main_section-advantages .section_container .section_block-title {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   display: flex;
   align-items: center;
 }
@@ -177,19 +229,22 @@ html:root {
 }
 .container .main .main_section-advantages .section_wrapper .section_block-info .section_block-text .section_text {
   color: #fff;
-  font: 400 0.8125rem "Noto Sans";
+  font: 400 14px "Noto Sans";
 }
 .container .main .main_section-advantages .section_wrapper .section_block-info:last-child {
   display: none;
 }
 .container .main .main_section-departaments {
   background: rgba(255, 255, 255, 0);
+  margin-bottom: 50px;
+}
+.container .main .main_section-departaments .section_block-title {
+  margin-bottom: 40px;
 }
 .container .main .main_section-departaments .mySwiper-1 {
   width: 100vw;
   height: auto;
-  padding: 0 30px;
-  margin-bottom: 30px;
+  padding: 0 40px;
 }
 .container .main .main_section-departaments .mySwiper-1 .swiper-wrapper {
   display: flex;
@@ -201,28 +256,37 @@ html:root {
 }
 .container .main .main_section-departaments .mySwiper-1 .swiper-wrapper .swiper-slide .slide_content {
   background: rgba(0, 0, 0, 0.25);
-  max-width: 300px;
-  height: 250px;
-  border-radius: 40px;
+  max-width: 330px;
+  height: 270px;
+  border-radius: 50px;
 }
 .container .main .main_section-departaments .mySwiper-1 .swiper-wrapper .swiper-slide .slide_content .slide_wrapper {
   height: 100%;
-  padding: 30px;
+  padding: 40px 30px 30px 30px;
   opacity: 0;
   display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 10px;
 }
 .container .main .main_section-departaments .mySwiper-1 .swiper-wrapper .swiper-slide .slide_content .swiper_title {
   text-align: center;
-  font: 400 1.5rem "Prosto One";
+  font: 400 22px "Prosto One";
   color: #fff;
 }
 .container .main .main_section-departaments .mySwiper-1 .swiper-wrapper .swiper-slide .slide_content .swiper_text {
-  font: 400 0.625rem "Prosto One";
+  text-align: center;
+  font: 400 14px "noto sans";
   color: #fff;
+}
+.container .main .main_section-departaments .mySwiper-1 .swiper-wrapper .swiper-slide .slide_content .swiper_button .swiper_wrapper-button {
+  width: 85%;
+  padding: 15px 0;
+  max-width: none;
+}
+.container .main .main_section-departaments .mySwiper-1 .swiper-wrapper .swiper-slide .slide_content .swiper_button .swiper_wrapper-button a {
+  font: 400 14px "Noto Sans";
 }
 .container .main .main_section-departaments .mySwiper-1 .swiper-wrapper .swiper-slide-active .slide_content .slide_wrapper {
   opacity: 1;
@@ -474,7 +538,7 @@ html:root {
   font: 400 0.75rem "Noto Sans";
   color: #fff;
 }
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 721px) {
   .container .main .main_section-departaments .mySwiper-1 .swiper-wrapper .swiper-slide .slide_content .slide_wrapper {
     opacity: 1;
   }
@@ -497,15 +561,25 @@ html:root {
     opacity: 1;
   }
 }
-@media screen and (min-width: 1500px) {
-  .container .main .main_section-myProjects .section_container .section_block-card {
-    display: block;
-  }
-}
 @media screen and (min-width: 768px) {
+  .container .header .section_nav .section_block .nav_list li:nth-child(6) {
+    display: none;
+  }
+  .container .header .section_nav .section_block .nav_list li .swiper_button {
+    padding: 0;
+    width: 180px;
+  }
+  .container .header .section_nav .section_block .nav_list li .swiper_button .swiper_wrapper-button {
+    padding: 10px 0;
+    text-align: center;
+    height: -moz-min-content;
+    height: min-content;
+    border: 1px solid rgb(255, 117, 40);
+    border-radius: 225px;
+  }
   .container .header .header_section .header_block {
     gap: 15px;
-    display: flex;
+    display: flex !important;
   }
   .container .header .header_section .header_block .section_block__text {
     display: flex;
@@ -544,10 +618,19 @@ html:root {
   .container .header .header_section .header_block .swiper_button {
     display: none;
   }
-  .container .main_section-news .swiper_button {
+  .container .main_section-advantages .section_container .section_wrapper .section_block-info {
+    display: block;
+  }
+  .container .main_section-advantages .section_container .section_wrapper .section_block-info .section_block-text .section_title {
+    font-size: 18px;
+  }
+  .container .main_section-advantages .section_container .section_wrapper .section_block-info .section_block-text .section_text {
+    font-size: 14px;
+  }
+  .container .main_section-advantages .swiper_button {
     padding-left: 30px;
   }
-  .container .main_section-news .swiper_button .swiper_wrapper-button {
+  .container .main_section-advantages .swiper_button .swiper_wrapper-button {
     margin: 0;
   }
   .container .main_section-myProjects .swiper_button {
@@ -583,9 +666,13 @@ html:root {
   .container .footer .footer_section .section_block-social .section_div {
     display: block;
   }
+  .section_block-title .section_title {
+    font: 400 26px "Jura";
+  }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   .container .header .header_section .section_nav .section_block {
+    justify-content: end;
     display: flex;
     width: 100%;
   }
@@ -593,21 +680,17 @@ html:root {
     display: none;
   }
   .container .header .header_section .section_nav .section_block .nav_list {
+    max-width: 720px;
     width: 100%;
     position: static;
     display: flex;
-    gap: 40px;
+    gap: 15px;
     justify-content: space-between;
     align-items: center;
   }
   .container .header .header_section .section_nav .section_block .nav_list li, .container .header .header_section .section_nav .section_block .nav_list li .swiper_button div a {
-    font: 400 13px "Noto Sans";
-  }
-  .container .header .header_section .section_nav .section_block .nav_list li .swiper_button {
-    width: 200px;
-  }
-  .container .header .header_section .section_nav .nav_logo {
-    margin-right: 9vw;
+    font: 400 12px "Noto Sans";
+    margin: 0;
   }
   .container .header .header_section .header_block .section_block__text .section_title {
     font-size: 70px;
@@ -618,8 +701,8 @@ html:root {
   .container .header .header_section .header_block .section_block__logo .section_photo {
     max-width: 700px;
   }
-  .container .main .main_section-advantages .section_container .section_wrapper .section_block-info:last-child {
-    display: block;
+  .container .main .main_section-departaments .mySwiper-1 .swiper-wrapper .swiper-slide .slide_content {
+    max-width: 370px;
   }
   .container .main .main_section-events .section_container .mySwiper-3 .swiper-wrapper {
     display: grid;
@@ -694,12 +777,54 @@ html:root {
     padding-left: 30px;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 900px) {
+  .container .main .main_section-advantages .section_container .section_wrapper .section_block-info:last-child {
+    display: block;
+  }
+  .container .main .main_section-advantages .section_container .section_wrapper .section_icon img {
+    height: 50px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .container .header .header_section .section_nav {
+    gap: 11vw;
+  }
+  .container .header .header_section .section_nav .section_block {
+    justify-content: start;
+    display: flex;
+    width: 100%;
+  }
+  .container .header .header_section .section_nav .section_block .section_burger {
+    display: none;
+  }
+  .container .header .header_section .section_nav .section_block .nav_list {
+    max-width: none;
+    width: 100%;
+    position: static;
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+  }
   .container .header .header_section .section_nav .section_block .nav_list li, .container .header .header_section .section_nav .section_block .nav_list li .swiper_button div a {
-    font-size: 16px;
+    margin: 0;
   }
   .container .header .header_section .section_nav .section_block .nav_list li .swiper_button {
-    width: 250px;
+    width: 200px;
+  }
+  .container .header .header_section .section_nav .section_block .nav_list li {
+    font: 400 13px "Noto Sans";
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container .header {
+    padding: 30px 60px 0 60px;
+  }
+  .container .header .header_section .section_nav .section_block .nav_list li, .container .header .header_section .section_nav .section_block .nav_list li .swiper_button div a {
+    font-size: 14px;
+  }
+  .container .header .header_section .section_nav .section_block .nav_list li .swiper_button {
+    width: 230px;
   }
   .container .header .header_section .section_nav .section_block .nav_list li .swiper_button .swiper_wrapper-button {
     max-width: none;
@@ -713,5 +838,102 @@ html:root {
   .container .header .header_section .header_block .section_block__logo .section_photo {
     width: 90%;
     max-width: 700px;
+  }
+  .container .main .main_section-advantages .section_container .section_wrapper {
+    padding: 0 60px;
+  }
+  .container .main .main_section-advantages .section_container .section_wrapper .section_block-info:last-child {
+    display: block;
+  }
+  .container .main .main_section-advantages .section_container .section_wrapper .section_block-info .section_icon img {
+    height: 50px;
+  }
+  .container .main .main_section-advantages .section_container .section_wrapper .section_block-info .section_block-text .section_title {
+    font-size: 20px;
+  }
+  .container .main .main_section-advantages .section_container .section_wrapper .section_block-info .section_block-text .section_text {
+    font-size: 16px;
+  }
+  .container .main .main_section-departaments .mySwiper-1 {
+    padding: 0 60px;
+  }
+  .section_block-title .section_title {
+    font: 400 32px "Jura";
+  }
+}
+@media screen and (min-width: 1400px) {
+  .container .header {
+    padding: 30px 6vw 0 60px;
+  }
+  .container .main .main_section-advantages .section_container .section_wrapper .section_block-info .section_icon img {
+    height: 60px;
+  }
+  .container .section_block-title .section_title {
+    font: 400 36px "Jura";
+  }
+  .container .main .main_section-departaments .mySwiper-1 .swiper-wrapper .swiper-slide .slide_content {
+    max-width: 450px;
+  }
+  .container .main .main_section-departaments .mySwiper-1 .swiper-wrapper .swiper-slide .slide_content {
+    height: auto;
+    min-height: 280px;
+    max-height: 370px;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .container .main .main_section-myProjects .section_container .section_block-card {
+    display: block;
+  }
+}
+@media screen and (min-width: 2000px) {
+  .container .header .header_section .section_nav img {
+    width: auto;
+    height: 120px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .container .header .header_section .section_nav li, .container .header .header_section .section_nav .swiper_button div a {
+    font-size: clamp(16px, 1vw, 27px) !important;
+  }
+  .container .header .header_section .section_nav li .swiper_button, .container .header .header_section .section_nav .swiper_button div a .swiper_button {
+    width: clamp(250px, 17vw, 450px) !important;
+  }
+  .container .header .header_section .section_nav li .swiper_button div, .container .header .header_section .section_nav .swiper_button div a .swiper_button div {
+    padding: 15px 0;
+    max-width: none;
+  }
+  .container .header .header_section .section_nav .nav_logo {
+    width: auto;
+    height: 120px;
+  }
+  .container .main .main_section-advantages {
+    margin-bottom: clamp(50px, 3vw, 120px) !important;
+  }
+  .container .main .main_section-advantages .section_container .section_wrapper .section_block-info .section_block-text .section_title {
+    font-size: clamp(20px, 1.4vw, 36px) !important;
+  }
+  .container .main .main_section-advantages .section_container .section_wrapper .section_block-info .section_block-text .section_text {
+    font-size: clamp(16px, 1.2vw, 32px) !important;
+  }
+  .container .main .main_section-advantages .section_container .section_wrapper .section_block-info .section_icon img {
+    height: clamp(50px, 4vw, 120px) !important;
+  }
+  .container .main .main_section-departaments .mySwiper-1 .swiper-wrapper .swiper-slide .slide_content .slide_wrapper {
+    gap: 30px;
+  }
+  .container .main .main_section-departaments .mySwiper-1 .swiper-wrapper .swiper-slide .slide_content .slide_wrapper .swiper_text {
+    font-size: clamp(16px, 1vw, 21px) !important;
+  }
+  .container .main .main_section-departaments .mySwiper-1 .swiper-wrapper .swiper-slide .slide_content .slide_wrapper .swiper_title {
+    font-size: clamp(22px, 1.3vw, 32px) !important;
+  }
+  .container .main .main_section-departaments .mySwiper-1 .swiper-wrapper .swiper-slide .slide_content .slide_wrapper .swiper_button .swiper_wrapper-button a {
+    font-size: clamp(16px, 1vw, 22px) !important;
+  }
+  .section_block-title {
+    margin-bottom: clamp(50px, 3vw, 120px) !important;
+  }
+  .section_block-title .section_title {
+    font-size: clamp(36px, 2.5vw, 70px) !important;
   }
 }/*# sourceMappingURL=main.css.map */

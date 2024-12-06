@@ -22,9 +22,7 @@ button
 
 html,body
     height: 100%
-p
-    font: 400 12px 'Noto Sans'
-    color: #fff
+
 .container
     display: grid
     grid-template-rows: auto 1fr auto
@@ -79,10 +77,11 @@ p
             display: flex
             flex-direction: column
             gap: 30px
-            .container    
+            .section-info_container 
                 width: 100%
+                margin-bottom: 65px
                 .section_block-aboutUs
-                    padding: 20px 40px 20px 20px
+                    padding: 20px 40px 40px 20px
                     position: relative
                     background: #000
                     width: 90vw
@@ -108,8 +107,14 @@ p
                         display: flex
                         flex-direction: column
                         align-items: center
+                        gap: 10px
                         img
                             max-width: 250px
+                            width: 100%
+                        p
+                            font: 400 20px 'Jura'
+                        p:first-child
+                            color: #d7c3ff
         .main_section-team
             background: rgba(0,0,0,.56)
             .section_block-title
@@ -120,9 +125,10 @@ p
                     color: #ff9153
             .container_section-team
                 display: grid
-                grid-template-columns: repeat(auto-fit ,minmax(100px ,200px))
+                grid-template-columns: repeat(2 ,minmax(100px ,180px))
                 justify-content: center
-                gap: 20px
+                gap: 15px
+                padding: 20px
                 .section_wrapper
                     width: 100%
                     .section_block
@@ -131,17 +137,25 @@ p
                         gap: 10px
                         .section_photo-people
                             width: 100%
-                    .section_name
+                    .section_name-block
+                        padding: 0 5px
                         display: flex
                         justify-content: space-between
                         .block_social
                             img
-                                height: 20px
+                                height: 15px
+                        p
+                            
+                            font: 400 12px 'Jura'
                     .block_position
+                        gap: 5px
+                        padding: 0 5px
                         display: flex
                         align-items: flex-end
                         justify-content: space-between
                         p
+                            font: 400 10px 'Jura'
+                            color: #f9bb53
                         .block_arrow
                             img
                                 max-width: 28px
@@ -234,8 +248,23 @@ p
 
 
 
-
-
+@media screen and (min-width: 440px)
+    .container
+        .main
+            .main_section-team
+                background: rgba(0,0,0,.56)
+                .section_block-title
+                    display: flex
+                    justify-self: center
+                    .title
+                        font: 400 20px 'Prosto One'
+                        color: #ff9153
+                .container_section-team
+                    display: grid
+                    grid-template-columns: repeat(auto-fill ,minmax(100px ,180px))
+                    justify-content: center
+                    gap: 15px
+                    padding: 20px
 @media screen and (min-width: 630px)
     .container
         .main
@@ -299,7 +328,7 @@ p
                         display: none
 
         .main
-            padding: 20px 40px
+            // padding: 20px 40px
             .section_main
 
                 .section_container
@@ -312,6 +341,17 @@ p
                             font-size: 14px
                 .section_block-img p
                     font-size: 14px
+
+            .main_section-info
+                display: flex
+                flex-direction: column
+                gap: 30px
+                
+                .section-info_container 
+                    gap: 100px
+                    display: flex
+                    .section_block-aboutUs
+                        width: auto
         .footer
             padding: 30px
             .footer_section
