@@ -179,28 +179,28 @@ html:root {
 .container .header .header_section .header_block .section_block__logo {
   display: flex;
   justify-content: center;
-  margin-bottom: 80vw;
+  margin-bottom: clamp(250px, 70vw, 490px);
 }
 .container .header .header_section .header_block .section_block__logo .section_photo {
   height: 100%;
   position: relative;
   left: 20px;
   width: 100%;
-  max-width: 670px;
+  max-width: 600px;
   height: -moz-min-content;
   height: min-content;
 }
 .container .header .header_section .header_block .section_block__logo .section_photo img {
   position: absolute;
-  width: 100%;
+  width: 90%;
   height: auto;
 }
 .container .header .header_section .header_block .section_block__logo .section_photo img:first-child {
-  left: -10px;
+  left: 15px;
 }
 .container .header .header_section .header_block .section_block__logo .section_photo img:last-child {
   top: 15px;
-  left: -10px;
+  left: 15px;
 }
 .container .header .header_section .header_block .swiper_button {
   padding: 0 30px;

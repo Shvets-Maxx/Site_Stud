@@ -143,23 +143,23 @@ html:root
                     display: flex
                     justify-content: center
                     // align-items: center
-                    margin-bottom: 80vw
+                    margin-bottom: clamp(250px,70vw , 490px)
                     .section_photo
                         height: 100%
                         position: relative
                         left: 20px
                         width: 100%
-                        max-width: 670px
+                        max-width: 600px
                         height: min-content
                         img
                             position: absolute
-                            width: 100%
+                            width: 90%
                             height: auto
                         img:first-child
-                            left: -10px
+                            left: 15px
                         img:last-child
                             top: 15px
-                            left: -10px
+                            left: 15px
                 .swiper_button
                     padding: 0 30px 
                     .swiper_wrapper-button
