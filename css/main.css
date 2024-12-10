@@ -184,7 +184,7 @@ html:root {
 .container .header .header_section .header_block .section_block__logo .section_photo {
   height: 100%;
   position: absolute;
-  width: 90%;
+  width: 80%;
   max-width: 550px;
   height: -moz-min-content;
   height: min-content;
