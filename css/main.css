@@ -71,9 +71,9 @@ html:root {
   transform: translate(-50%, -57%);
 }
 .container .header {
-  padding: 30px 20px 0 20px;
+  padding: 20px 20px 0 20px;
   margin-bottom: 40px;
-  height: 100vh;
+  min-height: 100vh;
 }
 .container .header .header_section {
   min-height: 100%;
@@ -82,7 +82,7 @@ html:root {
 }
 .container .header .header_section .section_nav {
   position: relative;
-  margin-bottom: 5vh;
+  margin-bottom: 4vh;
   gap: 3.5vw;
   display: flex;
   justify-content: space-between;
@@ -164,12 +164,12 @@ html:root {
   min-height: 100%;
 }
 .container .header .header_section .header_block .section_block__text .section_title {
-  margin-bottom: 20px;
+  margin-bottom: 3vh;
   font: 400 3rem "Zen Dots";
   color: #fff;
 }
 .container .header .header_section .header_block .section_block__text .section_text {
-  margin-bottom: 40px;
+  margin-bottom: 3vh;
   font: 400 15px "Noto Sans";
   color: #fff;
 }
@@ -179,34 +179,29 @@ html:root {
 .container .header .header_section .header_block .section_block__logo {
   display: flex;
   justify-content: center;
-  margin-bottom: clamp(250px, 70vw, 490px);
+  margin-bottom: clamp(250px, 80vw, 490px);
 }
 .container .header .header_section .header_block .section_block__logo .section_photo {
   height: 100%;
-  position: relative;
-  left: 20px;
-  width: 100%;
-  max-width: 600px;
+  position: absolute;
+  width: 90%;
+  max-width: 550px;
   height: -moz-min-content;
   height: min-content;
 }
 .container .header .header_section .header_block .section_block__logo .section_photo img {
   position: absolute;
-  width: 90%;
+  width: 100%;
   height: auto;
-}
-.container .header .header_section .header_block .section_block__logo .section_photo img:first-child {
-  left: 15px;
 }
 .container .header .header_section .header_block .section_block__logo .section_photo img:last-child {
   top: 15px;
-  left: 15px;
 }
 .container .header .header_section .header_block .swiper_button {
   padding: 0 30px;
 }
 .container .header .header_section .header_block .swiper_button .swiper_wrapper-button {
-  max-width: 350px;
+  max-width: 300px;
 }
 .container .main .main_section-advantages {
   margin-bottom: 50px;
@@ -464,6 +459,7 @@ html:root {
   padding: 20px 20px 40px 20px;
   width: 100vw;
   background: rgba(0, 0, 0, 0.25);
+  overflow: hidden;
 }
 .container .footer .footer_section {
   display: grid;
@@ -540,6 +536,10 @@ html:root {
   color: #fff;
 }
 .container .footer .footer_section .section_block-social .section_line {
+  height: 2px;
+  position: relative;
+  left: -30px;
+  width: 110vw;
   height: 1px;
   background: #fff;
 }

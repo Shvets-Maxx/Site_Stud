@@ -52,16 +52,16 @@ html:root
         left: 50%
         transform: translate(-50% , -57%)
     .header
-        padding: 30px 20px 0 20px 
+        padding: 20px 20px 0 20px 
         margin-bottom: 40px
-        height: 100vh
+        min-height: 100vh
         .header_section
             min-height: 100%
             display: flex
             flex-direction: column
             .section_nav
                 position: relative
-                margin-bottom: 5vh
+                margin-bottom: 4vh
                 gap: 3.5vw
                 // padding: 20px 20px 0 20px 
                 display: flex
@@ -130,11 +130,11 @@ html:root
                 min-height: 100%
                 .section_block__text
                     .section_title
-                        margin-bottom: 20px
+                        margin-bottom:3vh
                         font: 400 3rem 'Zen Dots'
                         color: #fff
                     .section_text
-                        margin-bottom: 40px
+                        margin-bottom: 3vh
                         font: 400 15px 'Noto Sans'
                         color: #fff
                     .swiper_button
@@ -143,27 +143,28 @@ html:root
                     display: flex
                     justify-content: center
                     // align-items: center
-                    margin-bottom: clamp(250px,70vw , 490px)
+                    margin-bottom: clamp(250px,80vw , 490px)
                     .section_photo
                         height: 100%
-                        position: relative
-                        left: 20px
-                        width: 100%
-                        max-width: 600px
+                        position: absolute
+                        
+                        width: 90%
+                        max-width: 550px
                         height: min-content
                         img
                             position: absolute
-                            width: 90%
+                            width: 100%
                             height: auto
+                            // transform: scale(.8)
                         img:first-child
-                            left: 15px
+                            // left: 20px
                         img:last-child
                             top: 15px
-                            left: 15px
+                            // left: 20px
                 .swiper_button
                     padding: 0 30px 
                     .swiper_wrapper-button
-                        max-width: 350px
+                        max-width: 300px
                         a
     .main
         .main_section-advantages
@@ -388,7 +389,7 @@ html:root
         padding: 20px 20px 40px 20px
         width: 100vw
         background: rgba(0, 0, 0, 0.25)
-
+        overflow: hidden
         .footer_section
             display: grid
             grid-template-rows: repeat(3,auto)
@@ -451,6 +452,10 @@ html:root
                     font: 400 .9375rem 'Prosto One'
                     color: #fff
                 .section_line
+                    height: 2px
+                    position: relative
+                    left: -30px
+                    width: 110vw
                     height: 1px 
                     background: #fff
                 .section_networks

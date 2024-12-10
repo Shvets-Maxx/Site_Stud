@@ -21,10 +21,10 @@ SectionBurger.addEventListener('click' ,() => {
 })
 
 
-document.addEventListener('mousemove', (e) => {
-    let x = e.clientX / innerWidth;
-    let y = e.clientY / innerHeight;
+// document.addEventListener('mousemove', (e) => {
+//     let x = e.clientX / innerWidth;
+//     let y = e.clientY / innerHeight;
 
-    bgPrometheus.style.transform = `translate(${(-x * 10)}px, ${(-y * 10)}px)`;
-    prometheus.style.transform = `translate(${(-x * 20)}px, ${(-y * 20)}px)`;
-});
+//     bgPrometheus.style.transform = `translate(${(-x * 10)}px, ${(-y * 10)}px)`;
+//     prometheus.style.transform = `translate(${(-x * 20)}px, ${(-y * 20)}px)`;
+// });
