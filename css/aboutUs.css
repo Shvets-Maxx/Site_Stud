@@ -156,7 +156,7 @@ html, body {
 }
 .container .main .main_section-team .container_section-team {
   display: grid;
-  grid-template-columns: repeat(2, minmax(100px, 180px));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   justify-content: center;
   gap: 15px;
   padding: 20px;
@@ -399,11 +399,25 @@ html, body {
     gap: 30px;
   }
   .container .main .main_section-info .section-info_container {
+    padding-right: 40px;
     gap: 100px;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   .container .main .main_section-info .section-info_container .section_block-aboutUs {
     width: auto;
+    flex-basis: 50%;
+  }
+  .container .main .main_section-info .section-info_container .section_block-aboutUs .section_photo {
+    width: 100px;
+  }
+  .container .main .main_section-info .section-info_container .section_block-leader {
+    height: -moz-min-content;
+    height: min-content;
+  }
+  .container .main .main_section-team .container_section-team {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
   .container .footer {
     padding: 30px;

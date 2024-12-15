@@ -10,12 +10,13 @@
 </head>
 <body>
     <div class="container">
-        <img class="burger_bg" src="../img/image 16.png" alt="">
+        <!-- <img class="burger_bg" src="../img/image 16.png" alt=""> -->
         <header class="header">
             <section class="header_section">
                 <nav class="section_nav">
                     <img class="nav_logo " src="../img/logoIATE.png" alt="">
                     <div class="section_block">
+                        <img class="burger_bg" src="../img/image 16.png" alt="">
                         <div class="section_burger">
                             <div class="burger_menu"></div>
                             <div class="burger_menu"></div>
@@ -418,95 +419,101 @@
 
   <!-- Initialize Swiper -->
   <script>
-    var swiper = new Swiper(".mySwiper-1", {
-      navigation: {
-        nextEl: ".next-1",
-        prevEl: ".prev-1",
-      },
-      
-            slidesPerView: 1,
-            spaceBetween: 20,
-            loop: true,
-            centeredSlides: true,
-            breakpoints: {
-            500: {
-            centeredSlides: false,
-            slidesPerView: 1.5,
-            spaceBetween: 20
-            },
-            721: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-            centeredSlides: false,
-            },
-            1050: {
-            centeredSlides: true,
-            slidesPerView: 3,
-            spaceBetween: 20
-            },
-            1432: {
-            centeredSlides: false,
-            slidesPerView: 4,
-            spaceBetween: 20
-            },
-            1550: {
-            spaceBetween: 30
-            }
-        }
-    });
-    // var swiper_2 = new Swiper(".mySwiper-2", {
+    // var swiper = new Swiper(".mySwiper-1", {
     //   navigation: {
-    //     nextEl: ".next-2",
-    //     prevEl: ".prev-2",
+    //     nextEl: ".next-1",
+    //     prevEl: ".prev-1",
     //   },
-    //   slidesPerView: 1,
-    //   spaceBetween: 20,
-    //   loop: true,
-    //   breakpoints: {
-    //     450: {
-    //     slidesPerView: 1.2,
-    //     spaceBetween: 20
-    //     },
-    //     600: {
-    //     slidesPerView: 2,
-    //     spaceBetween: 20
-    //     },
-    //     900: {
-    //         slidesPerView: 3,
+      
+    //         slidesPerView: 1,
     //         spaceBetween: 20,
-    //         loop: false,
+    //         loop: true,
+    //         centeredSlides: true,
+    //         breakpoints: {
+    //         500: {
+    //         centeredSlides: false,
+    //         slidesPerView: 1.5,
+    //         spaceBetween: 20
+    //         },
+    //         721: {
+    //         slidesPerView: 2,
+    //         spaceBetween: 20,
+    //         centeredSlides: false,
+    //         },
+    //         1050: {
+    //         centeredSlides: true,
+    //         slidesPerView: 3,
+    //         spaceBetween: 20
+    //         },
+    //         1432: {
+    //         centeredSlides: false,
+    //         slidesPerView: 4,
+    //         spaceBetween: 20
+    //         },
+    //         1550: {
+    //         spaceBetween: 30
     //         }
     //     }
     // });
-    // var swiper_3 = new Swiper(".mySwiper-3", {
-    //   navigation: {
-    //     nextEl: ".next-3",
-    //     prevEl: ".prev-3",
-    //   },
-    //   slidesPerView: 1,
-    //   spaceBetween: 20,
-    //   loop: true,
-    //   breakpoints: {
-    //     450: {
-    //     slidesPerView: 1.5,
-    //     spaceBetween: 20
-    //     },
-    //     600: {
-    //     slidesPerView: 2,
-    //     spaceBetween: 20
-    //     },
-    //     850: {
-    //         slidesPerView: 3,
-    //         spaceBetween: 20
-    //         }
-    //     }
-    // }
-    // )
-
+    let swiper_1;
     let swiper_2;
     let swiper_3;
-// Функція для перевірки ширини екрану та створення або видалення Swiper
 function checkScreenSize() {
+    if (window.innerWidth < 22232){
+        if(!swiper_1){
+            swiper_1 = new Swiper(".mySwiper-1", {
+            navigation: {
+                nextEl: ".next-1",
+                prevEl: ".prev-1",
+            },
+      
+            slidesPerView: 4,
+            // spaceBetween: 20,
+            loop: true,
+            centeredSlides: true,
+            breakpoints: {
+                1550: {
+                spaceBetween: 30,
+                centeredSlides: false,
+                loop: false,
+                slidesPerView: 4,
+                },
+                1432: {
+                centeredSlides: false,
+                loop: false,
+                slidesPerView: 4,
+                spaceBetween: 20
+                },
+                1027: {
+                centeredSlides: false,
+                slidesPerView: 3,
+                spaceBetween: 30
+                },
+                721: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+                centeredSlides: false,
+                },
+                500: {
+                centeredSlides: false,
+                slidesPerView: 1.5,
+                spaceBetween: 20
+                },
+                300:{
+                    slidesPerView: 1,
+                    spaceBetween: 500
+                }
+            }
+            });
+        }
+    }
+    // else{
+    //         if(swiper_1){
+    //         swiper_1.destroy(true,true); 
+    //         swiper_1 = null;
+    //         console.log('hello')
+    //     }
+    //     }
     if (window.innerWidth < 1024) {
         // Якщо екран більше 609px і Swiper ще не ініціалізований, створюємо його
         if (!swiper_3) {
@@ -519,6 +526,10 @@ function checkScreenSize() {
                 spaceBetween: 20,
                 loop: true,
                 breakpoints: {
+                300: {
+                slidesPerView: 1,
+                spaceBetween: 20
+                },
                 490: {
                 slidesPerView: 1.5,
                 spaceBetween: 20
@@ -528,7 +539,7 @@ function checkScreenSize() {
                 spaceBetween: 20
                 },
                 900: {
-                    loop: false,
+                loop: true,
                 slidesPerView: 3,
                 spaceBetween: 20
                 }
@@ -542,21 +553,23 @@ function checkScreenSize() {
                     prevEl: ".prev-2",
                 },
                 slidesPerView: 1,
-                spaceBetween: 20,
+                spaceBetween: 200,
                 loop: true,
                 breakpoints: {
-                    450: {
-                    slidesPerView: 1.2,
+                    500: {
+                    
+                    slidesPerView: 1.5,
                     spaceBetween: 20
                     },
-                    600: {
+                    721: {
+                    centeredSlides: false,
                     slidesPerView: 2,
                     spaceBetween: 20
                     },
-                    700: {
+                    1027: {
                         
                         slidesPerView: 3,
-                        spaceBetween: 20
+                        spaceBetween: 30
                         }
                 }
             });

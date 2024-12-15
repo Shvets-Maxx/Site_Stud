@@ -2,6 +2,15 @@
       
 html:root
     --swiper-navigation-size:  35px
+
+
+.swiper_wrapper-button:hover 
+        background: rgba(255, 117, 40, 1) !important
+        border-width:  1px 
+        border-color: none
+        color: #fff
+        cursor: pointer
+        
 .section_block-title
     display: flex
     align-items: center
@@ -42,17 +51,17 @@ html:root
     display: grid
     grid-template-rows: repeat(3,auto)
     background: rgba(34, 34, 34, 1)
-    .burger_bg
-        display: none
-        position: absolute
-        width: 100%
-        max-height: 500px
-        min-height: 400px
-        top: 400px //57%
-        left: 50%
-        transform: translate(-50% , -57%)
+    // .burger_bg
+    //     display: none
+    //     position: absolute
+    //     width: 100%
+    //     max-height: 500px
+    //     min-height: 400px
+    //     top: 400px //57%
+    //     left: 50%
+    //     transform: translate(-50% , -57%)
     .header
-        padding: 20px 20px 0 20px 
+        padding: 20px 20px 0px
         margin-bottom: 40px
         min-height: 100vh
         .header_section
@@ -68,16 +77,28 @@ html:root
                 justify-content: space-between
                 .nav_logo
                     display: block
-                    width: 83px
-                    height: 67px 
+                    width: 100px
                 .section_block
+                    position: fixed
                     display: flex
                     align-items: center
+                    z-index: 555
+                    padding: 0
+                    .burger_bg
+                        display: none
+                        position: fixed
+                        width: 100%
+                        max-height: 500px
+                        min-height: 400px
+                        top: 400px //57%
+                        left: 50%
+                        transform: translate(-50% , -57%)
                     .section_burger
                         cursor: pointer
-                        position: absolute
-                        top: 0
-                        right: 0
+                        position: fixed
+                        top: 20px
+                        right: 20px
+                        z-index: 55
                         display: flex
                         flex-direction: column
                         gap: 6px
@@ -105,20 +126,11 @@ html:root
                         font: 400 24px 'Noto Sans'
                         color: #fff
                     li .swiper_button
-                        padding: 0
-                        .swiper_wrapper-button
-                            margin: 0 auto
-                            padding: 0
-                            text-align: start
-                            min-width: none
-                            max-width: none 
-                            height: auto
-                            border: none
-                            border-radius: 0
+                        display: none
                     li
                         cursor: pointer
                         margin-bottom: 25px
-                    li:hover , .nav_link:hover
+                    li:hover 
                         color: #FFC657
                     li:last-child
                         margin: 0
@@ -129,9 +141,12 @@ html:root
                 // flex-grow: 0.5
                 min-height: 100%
                 .section_block__text
+                    display: flex
+                    flex-direction: column
+                    gap: 3vh
                     .section_title
-                        margin-bottom:3vh
-                        font: 400 3rem 'Zen Dots'
+                        //margin-bottom:3vh
+                        font: 400 50px 'Zen Dots'
                         color: #fff
                     .section_text
                         margin-bottom: 4vh
@@ -143,31 +158,38 @@ html:root
                     display: flex
                     justify-content: center
                     // align-items: center
-                    margin-bottom: clamp(250px,70vw , 490px)
+                    margin-bottom: clamp(40px,10vw , 64px)
                     .section_photo
-                        height: 100%
-                        position: absolute
-                        
-                        width: 80%
+                        height: 100%                        
                         max-width: 550px
                         height: min-content
+                        display: grid
+                        grid-template-columns: auto
+                        grid-template-rows: auto
+                        place-items: center
+                        position: relative
+                        left: 10px
                         img
-                            position: absolute
+                            aspect-ratio: 4/3
+                            max-height: 40vh
+                            position: relative
+                            grid-area: 1 / 1
                             width: 100%
                             height: auto
                             // transform: scale(.8)
                         img:first-child
                             // left: 20px
                         img:last-child
-                            top: 15px
-                            // left: 20px
+                            top: -15px
+                            left: -20px
                 .swiper_button
                     padding: 0 10px 
                     .swiper_wrapper-button
-                        padding: 12px 0
+                        padding: 10px 0
                         max-width: 350px
                         a
                             font-size: 17px
+
     .main
         .main_section-advantages
             margin-bottom: 50px
@@ -216,8 +238,8 @@ html:root
                         justify-content: center
                         .slide_content
                             background: rgba(0, 0, 0, 0.25)
-                            max-width: 330px
-                            height: 270px
+                            max-width: 350px
+                            min-height: 270px
                             border-radius: 50px
                             .slide_wrapper
                                 height: 100%
@@ -227,7 +249,7 @@ html:root
                                 flex-direction: column
                                 text-align: center
                                 justify-content: space-between
-                                gap: 10px 
+                                gap: 20px 
                             .swiper_title
                                 text-align: center
                                 font: 400 22px 'Prosto One'
@@ -240,8 +262,9 @@ html:root
                                 //margin-bottom: 30px
                             .swiper_button
                                 .swiper_wrapper-button
+                                    background: rgba(0, 0, 0, 0.14)
                                     width: 85%
-                                    padding: 13px 0
+                                    padding: 10px 0
                                     max-width: none
                                     a
                                         font: 400 14px 'Noto Sans'
@@ -254,7 +277,9 @@ html:root
                 position: static
                 margin-top: 0
         .main_section-news
+            margin-bottom: 50px
             .section_block-title
+                margin-bottom: 40px
                 .section_line1
                     width: 100%
                 .section_line2
@@ -263,16 +288,17 @@ html:root
                 margin-bottom: 30px
                 width: 100vw
                 height: auto
-                padding: 30px
+                padding: 0 40px
                 .swiper-wrapper
                     // justify-items: center
                     // display: grid
                     // grid-template-rows: 1fr
                     // grid-template-columns: repeat(3,1fr)
                     .swiper-slide
+                        display: flex
                         border-radius: 30px
                         background-color: rgba(0, 0, 0, 0.25)
-                        display: flex
+                        // display: flex
                         justify-content: center
                         height: 250px
                         .swiper_content
@@ -289,6 +315,7 @@ html:root
                     .swiper-slide-active
                         background: none
             .swiper_button
+                padding: 0 40px
                 .swiper_wrapper-button
                     width: auto
                     max-width: 300px
@@ -304,11 +331,11 @@ html:root
             .section_container
                 justify-items: center
                 display: grid
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))
                 grid-template-rows: auto
-                grid-gap: 30px
+                grid-gap: 40px
                 margin-bottom: 50px
-                padding: 0 8vw
+                padding: 0 12vw
                 .section_block-card
                     display: none
                     width: 100%
@@ -380,8 +407,12 @@ html:root
                                                 font: 400 12px 'Noto Sans'
                                                 color: #fff
                                     .swiper_button
-                                        background: rgba(0, 0, 0, 0.14)
                                         width: auto
+                                        height: min-content
+                                        .swiper_wrapper-button
+                                            background: rgba(0, 0, 0, 0.14)
+
+
                         .swiper-slide-active .swiper_content
                             opacity: 1
                             background: none
@@ -398,7 +429,6 @@ html:root
             grid-template-columns: 1fr
             grid-template-areas: "contact" "social" "underText"
             grid-row-gap: 50px
-            grid-column-gap: 30px
             .section_block-contact
                 grid-area: contact
                 // padding-right: 50px
@@ -492,15 +522,18 @@ html:root
                             .swiper_wrapper-button
                                 a
                         .section_title
-                            font-size: 62px
+                            font-size: 68px
                         .section_text
-                            font-size: 18px
+                            font-size: 20px
                     .section_block__logo
 
                         .section_photo
 
                     .swiper_button .swiper_wrapper-button a
                         font-size: 20px
+
+
+
 
 @media screen and (min-width: 721px)
    .container
@@ -514,6 +547,13 @@ html:root
                                     opacity: 1
                                 .swiper_text
                                     // font-size: 13px
+            .main_section-news
+                .mySwiper-2
+                    .swiper-wrapper
+                        .swiper-slide
+                            background: none
+                            .swiper_content
+                                opacity: 1
                             
             .main_section-advantages
                 .section_container
@@ -531,66 +571,58 @@ html:root
                                 background: none
                                 .swiper_content
                                     opacity: 1
-            .main_section-news
-                .mySwiper-2
-                    .swiper-wrapper
-                        .swiper-slide
-                            background: none
-                            .swiper_content
-                                opacity: 1
+            
 
 
 
 @media screen and (min-width: 768px)
     .container
-        .header
-            .section_nav
-                .section_block
-                    .nav_list
-                        li:nth-child(6)
-                            display: none
-                        li .swiper_button
-                            padding: 0
-                            width: 180px
-                            .swiper_wrapper-button
-                                padding: 10px 0
-                                text-align: center
-                                height: min-content
-                                border: 1px solid rgba(255, 117, 40, 1)
-                                border-radius: 225px
-            .header_section
-                .header_block
-                    gap: 15px
-                    display: flex !important
-                    .section_block__text
-                        display: flex
-                        flex-direction: column
-                        justify-content: center
-                        width: 70%
-                        padding: 0
-                        .swiper_button
-                            padding: 0
-                            display: block
-                            .swiper_wrapper-button
-                                border: none
-                                margin: 0
-                                max-width: 150px
-                                background: linear-gradient(104.83deg, #BD5629 15.93%, #F9BB53 65.28%, #F9BB53 93.38%)  //, rgba(65, 71, 131, 0.67) 101.03%
-                                a
-                                    font-weight: 800
-                        .section_title
-                            font-size: 2rem
-                        .section_text
-                            font-size: 0.8125rem
-                            margin-bottom: 20px
-                    .section_block__logo
-                        margin: 0
-                        width: 100%
-                        .section_photo
-                            min-height: 250px
-                            // width: 200px
-                    .swiper_button
-                        display: none
+        // .header
+        //     .section_nav
+        //         .section_block
+        //             .nav_list
+        //                 // li:nth-child(6)
+        //                 //     display: none
+        //                 // li .swiper_button
+        //                 //     padding: 0
+        //                 //     width: 180px
+        //                 //     .swiper_wrapper-button
+        //                 //         padding: 10px 0
+        //                 //         text-align: center
+        //                 //         height: min-content
+        //                 //         border: 1px solid rgba(255, 117, 40, 1)
+        //                 //         border-radius: 225px
+        //     .header_section
+        //         .header_block
+        //             // position: relative
+        //             // gap: 15px
+        //             // display: flex !important
+        //             .section_block__text
+        //                 // display: flex
+        //                 // flex-direction: column
+        //                 // justify-content: center
+        //                 // width: 100%
+        //                 // padding: 0
+        //                 .swiper_button
+        //                     // padding: 0
+        //                     // display: block
+        //                     // .swiper_wrapper-button
+        //                     //     border: none
+        //                     //     margin: 0
+        //                     //     max-width: 150px
+        //                     //     background: linear-gradient(104.83deg, #BD5629 15.93%, #F9BB53 65.28%, #F9BB53 93.38%)  //, rgba(65, 71, 131, 0.67) 101.03%
+        //                     //     a
+        //                     //         font-weight: 800
+        //                 .section_text
+        //             // .section_block__logo
+        //             //     margin: 0
+        //             //     width: 100%
+        //             //     height: min-content
+        //             //     .section_photo
+        //             //         min-height: 250px
+        //             //         // width: 200px
+        //             // .swiper_button
+        //             //     display: none
         .main_section-advantages
             .section_container
                 .section_wrapper
@@ -605,14 +637,8 @@ html:root
                 padding-left: 30px
                 .swiper_wrapper-button
                     margin: 0
-        .main_section-myProjects
-                .swiper_button
-                    padding-right: 40px
-                    .swiper_wrapper-button
-                        margin: 0
-                        margin-left: auto
         .footer
-            padding: 30px 5vw 30px 30px
+            padding: 30px 3vw 30px 20px
             .footer_section
                 grid-template-columns: .5fr 1fr
                 grid-template-areas: "social contact" "underText underText"
@@ -635,6 +661,10 @@ html:root
                         p:nth-child(1)
                             margin: 0
                 .section_block-social
+                    .section_line
+                        min-width: 270px
+                        width: 100%
+                        max-width: 400px
                     .section_div
                         display: block
 
@@ -650,34 +680,70 @@ html:root
     .container
         .header
             .header_section
-                .section_nav
-                    .section_block
-                        justify-content: end
-                        display: flex
-                        width: 100%
-                        .section_burger
-                            display: none
-                        .nav_list
-                            max-width: 720px
-                            width: 100%
-                            position: static
-                            display: flex
-                            gap: 15px
-                            justify-content: space-between
-                            align-items: center
-                            li, li .swiper_button div a
-                                font: 400 12px 'Noto Sans'
-                                margin: 0
-                    .nav_logo 
+                // .section_nav
+                //     .section_block
+                //         justify-content: end
+                //         display: flex
+                //         width: 100%
+                //         .section_burger
+                //             display: none
+                //         .nav_list
+                //             max-width: 720px
+                //             width: 100%
+                //             position: static
+                //             display: flex
+                //             gap: 15px
+                //             justify-content: space-between
+                //             align-items: center
+                //             li, li .swiper_button div a
+                //                 font: 400 14px 'Noto Sans'
+                //                 margin: 0
+                //             li:nth-child(6)
+                //                 display: none
+                //             li .swiper_button
+                //                 padding: 0
+                //                 width: 180px
+                //                 .swiper_wrapper-button
+                //                     padding: 10px 0
+                //                     text-align: center
+                //                     height: min-content
+                //                     border: 1px solid rgba(255, 117, 40, 1)
+                //                     border-radius: 225px
                 .header_block
+                    position: relative
+                    gap: 15px
+                    // display: flex !important
                     .section_block__text
+                        display: flex
+                        flex-direction: column
+                        justify-content: center
+                        width: 100%
+                        padding: 0
                         .section_title
-                            font-size: 70px
+                            font-size: 90px
                         .section_text
-                            font-size: 16px
+                            font-size: 22px
+                        .swiper_button
+                            padding: 0
+                            // display: block
+                            .swiper_wrapper-button
+                                border: none
+                                margin: 0
+                                max-width: 150px
+                                background: linear-gradient(104.83deg, #BD5629 15.93%, #F9BB53 65.28%, #F9BB53 93.38%)  //, rgba(65, 71, 131, 0.67) 101.03%
+                                a
+                                    font-weight: 800
                     .section_block__logo
+                        // margin: 0
+                        width: 100%
+                        // height: min-content
                         .section_photo
+                            min-height: 250px
                             max-width: 700px
+                            img
+                                max-height: 45vh
+                    .swiper_button
+                        // display: none
 
         .main
             .main_section-myProjects
@@ -717,7 +783,7 @@ html:root
             //         .swiper_wrapper-button
 
 
-@media screen and (min-width: 900px)
+@media screen and (min-width: 1053px)
     .container
         .main
             .main_section-advantages
@@ -734,12 +800,42 @@ html:root
                         display: block
 
                         
-@media screen and (min-width: 1024px)
+@media screen and (min-width: 1027px)
    .container
         .header
             .header_section
                 .section_nav
-                    gap: 11vw
+                    .section_block
+                        justify-content: end
+                        display: flex
+                        width: 100%
+                        .section_burger
+                            display: none
+                        .nav_list
+                            max-width: 720px
+                            width: 100%
+                            position: static
+                            display: flex
+                            gap: 15px
+                            justify-content: space-between
+                            align-items: center
+                            li, li .swiper_button div a
+                                font: 400 14px 'Noto Sans'
+                                margin: 0
+                            li:nth-child(6)
+                                display: none
+                            li .swiper_button
+                                display: block
+                                padding: 0
+                                width: 180px
+                                .swiper_wrapper-button
+                                    padding: 10px 0
+                                    text-align: center
+                                    height: min-content
+                                    border: 1px solid rgba(255, 117, 40, 1)
+                                    border-radius: 225px
+                .section_nav
+                    gap: 12vw
                     .section_block
                         justify-content: start
                         display: flex
@@ -759,7 +855,53 @@ html:root
                             li .swiper_button 
                                 width: 200px
                             li
-                                font: 400 13px 'Noto Sans'
+                                font: 400 16px 'Noto Sans'
+                .header_block
+                    position: relative
+                    gap: 60px
+                    display: flex !important
+                    flex-grow: .5
+                    align-items: center
+                    .section_block__text
+                        width: 100%
+                        padding: 0
+                        gap: 0
+                        .section_title
+                            font-size: 70px
+                            margin: 0
+                        .section_text
+                            margin: 0
+                            font-size: 16px
+                            margin-bottom: 20px
+                        .swiper_button
+                            padding: 0
+                            display: block
+                            .swiper_wrapper-button
+                                border: none
+                                margin: 0
+                                max-width: 200px
+                                background: linear-gradient(104.83deg, #BD5629 15.93%, #F9BB53 65.28%, #F9BB53 93.38%)  //, rgba(65, 71, 131, 0.67) 101.03%
+                                a
+                                    font-weight: 800
+                            .swiper_wrapper-button:hover 
+                                background: linear-gradient(104.83deg, #3C0765 15.93%, #593E90 47.42%, #B18BFA 101.02%, #F9BB53 101.03%, rgba(65, 71, 131, 0.67) 101.03%) !important
+                                cursor: pointer
+
+
+                    .section_block__logo
+                        //padding: 0
+                        margin: 0
+                        width: 100%
+                        height: min-content
+                        .section_photo
+                            min-height: 250px
+                            max-width: 7000px
+                            img
+                                max-height: none
+                    .swiper_button
+                        display: none
+            
+
         .main
             .main_section-events
                     .section_container
@@ -802,7 +944,44 @@ html:root
                                                         -webkit-line-clamp: 3
                                                         -webkit-box-orient: vertical
                                                         font-size: 15px
+                            .swiper-button-next, .swiper-button-prev 
+                                display: none
+            .main_section-news
+                .mySwiper-2
+                    .swiper-wrapper
+                        display: grid
+                        grid-template-columns: 1fr 0.5fr
+                        grid-template-areas: "one  tw" "one  tr"
+                        grid-column-gap: 50px
+                        grid-row-gap: 20px
+                        .swiper-slide:nth-child(1)
+                            grid-area: one
+                        .swiper-slide:nth-child(2)
+                            grid-area: tw
+                        .swiper-slide:nth-child(3)
+                            grid-area: tr
+                        .swiper-slide
+                            height: auto
+                            .swiper_content
+                                max-width: none
+                                img
+                    .prev-2 , .next-2
+                        display: none
+                .swiper_button
+                    padding-left: 40px
+                    .swiper_wrapper-button
+                        max-width: 300px
+                        margin: 0
+                        
+            .main_section-myProjects
+                .swiper_button
+                    padding-right: 6vw
+                    .swiper_wrapper-button
+                        margin: 0
+                        margin-left: auto
+
         .footer
+            padding: 30px 5vw 20px 30px
             .footer_section
                 .section_block-contact
                     .section_wrapper-contact
@@ -832,8 +1011,8 @@ html:root
                 .section_nav
                     .section_block
                         .nav_list
-                            li , li .swiper_button div a
-                                font-size: 14px
+                            // li , li .swiper_button div a
+                            //     font-size: 14px
                             li .swiper_button 
                                 width: 230px
                                 .swiper_wrapper-button 
@@ -849,8 +1028,7 @@ html:root
 
                     .section_block__logo
                         .section_photo
-                            width: 90% 
-                            max-width: 700px
+                            max-width: 900px
                             img
         .main
             .main_section-advantages
@@ -877,7 +1055,14 @@ html:root
                     .swiper_block-text 
                         .swiper_mainText p
                             font-size: 15px
-                    .swiper_button .swiper_wrapper-button a            
+                    .swiper_button .swiper_wrapper-button a    
+            .main_section-news 
+                .mySwiper-2
+                    padding: 0 60px   
+                .swiper_button
+                    padding: 0 60px
+
+
         .footer
             .footer_section
                 .section_block-contact
@@ -901,12 +1086,18 @@ html:root
         .section_title
             font: 400 32px'Jura'
 
-@media screen and (min-width: 1300px)
+@media screen and (min-width: 1363px)
     .container
         .main
             .main_section-myProjects
+
+                .swiper_button
+                    padding-right: 4vw
                 .section_container
+                    grid-template-columns: repeat(4, minmax(250px, 1fr))
+                    padding: 0 8vw
                     .section_block-card
+                        max-width: 400px
                         display: block   
 
                         
@@ -918,7 +1109,7 @@ html:root
     .container .header .header_section .section_nav .section_block .nav_list li .swiper_button 
         // width: 270px
     .container .header
-        padding: 30px 6vw 0 60px
+        padding: 30px 60px 0 60px
     .container .main .main_section-advantages .section_container .section_wrapper .section_block-info .section_block-text .section_text 
         // font-size: 18px
     .container .main .main_section-advantages .section_container .section_wrapper .section_block-info .section_block-text .section_title 
@@ -951,6 +1142,10 @@ html:root
                 font-size: 14px
             p:first-child
                 font-size: 17px
+    .container .header .header_section .header_block 
+        .section_block__text 
+            .section_title 
+                font-size: 100px
 
 
 
@@ -976,11 +1171,26 @@ html:root
                                 max-width: none
                     .nav_logo
                         width: auto
-                        height: 120px
+                        height: 100px
+                .header_block .section_block__text 
+                    .section_title 
+                        font-size: clamp(100px, 6.5vw, 160px) !important
+                    .section_text
+                        font-size: clamp(16px, 1vw, 24px) !important
+                    .swiper_button 
+                        .swiper_wrapper-button
+                            max-width: none
+                            width: clamp(230px, 13vw, 350px)
+                            a
+                                font-size: clamp(16px, 1.4vw, 32px) !important
+
+
         .main
             .main_section-advantages
-                margin-bottom: clamp(50px, 3vw , 120px) !important
+                margin-bottom: clamp(50px, 4vw , 120px) !important
                 .section_container
+                    .section_block-title
+                        margin-bottom: clamp(50px, 4vw , 120px) !important
                     .section_wrapper
                         .section_block-info
                             .section_block-text
@@ -991,30 +1201,54 @@ html:root
                             .section_icon
                                 img
                                     height: clamp(50px, 4vw, 120px)!important
-            .main_section-departaments .mySwiper-1 
-                .swiper-wrapper 
-                    .swiper-slide
-                        .slide_content 
-                            .slide_wrapper
-                                gap: 30px
-                                .swiper_text
-                                    font-size: clamp(16px, 1vw, 21px)!important
-                                .swiper_title
-                                    font-size: clamp(22px, 1.3vw, 32px)!important
-                                .swiper_button .swiper_wrapper-button a
-                                    font-size: clamp(16px, 1vw, 22px)!important
-            .main_section-myProjects .swiper_button 
-                .swiper_wrapper-button 
-                    max-width: none
-                    padding: 13px 0
-                    width: clamp(230px, 13vw, 350px)
-                    a
-                        font-size: clamp(14px, .9vw, 22px)!important
-            .main_section-news .swiper_button .swiper_wrapper-button a
-                font-size: clamp(14px, .9vw, 22px)!important
+            .main_section-departaments 
+                margin-bottom: clamp(50px, 4vw , 120px) !important
+                .section_block-title
+                    margin-bottom: clamp(50px, 4vw , 120px) !important   
+                .mySwiper-1 
+                    .swiper-wrapper 
+                        .swiper-slide
+                            .slide_content 
+                                .slide_wrapper
+                                    gap: 30px
+                                    .swiper_text
+                                        font-size: clamp(16px, 1vw, 21px)!important
+                                    .swiper_title
+                                        font-size: clamp(22px, 1.3vw, 32px)!important
+                                    .swiper_button 
+                                        .swiper_wrapper-button 
+                                            padding: 13px 0
+                                            a
+                                                font-size: clamp(16px, 1vw, 22px)!important
+            .main_section-myProjects 
+                .section_container .section_block-card 
+                    .section_block-text
+                        padding: 20px 0 20px 20px
+                        p 
+                            font-size: clamp(15px, 1.2vw, 32px)!important
+                .swiper_button 
+                    .swiper_wrapper-button 
+                        max-width: none
+                        padding: 13px 0
+                        width: clamp(230px, 13vw, 350px)
+                        a
+                            font-size: clamp(14px, .9vw, 22px)!important
+    
+            .main_section-news 
+                margin-bottom: clamp(50px, 4vw , 120px) !important  
+                .section_block-title
+                    margin-bottom: clamp(50px, 4vw , 120px) !important   
+                .swiper_button 
+                    .swiper_wrapper-button
+                        max-width: none
+                        width: clamp(300px, 27vw, 630px)
+                        padding: 13px 0
+                        a
+                            font-size: clamp(14px, .9vw, 22px)!important
             .main_section-events 
+                margin-bottom: clamp(50px, 4vw , 120px) !important
                 .section_block-title 
-                    margin-bottom: clamp(50px, 3vw , 120px) !important
+                    margin-bottom: clamp(50px, 4vw , 120px) !important
                 .section_container .mySwiper-3 .swiper-wrapper .swiper-slide 
                     .swiper_content 
                         .swiper_wrapper 
@@ -1023,7 +1257,7 @@ html:root
                                     p:first-child
                                         font-size: clamp(17px, 1.2vw, 32px)!important
                                     p:last-child
-                                        font-size: clamp(14px, 1vw, 22px)!important
+                                        font-size: clamp(14px, 0.9vw, 22px)!important
                                 .swiper_mainText 
                                     p 
                                         font-size: clamp(17px, 1.2vw, 32px)!important
@@ -1037,6 +1271,10 @@ html:root
                                         font-size: clamp(14px, .9vw, 22px)!important
                         .swiper_photo
                             max-width: 670px
+            .main_section-myProjects 
+                margin-bottom: clamp(50px, 3vw , 120px) !important
+                .section_block-title
+                    margin-bottom: clamp(50px, 3vw , 120px) !important
 
         .footer
             .footer_section
@@ -1070,7 +1308,6 @@ html:root
 
 
     .section_block-title
-        margin-bottom: clamp(50px, 3vw , 120px) !important
         .section_title 
             font-size:  clamp(36px, 2.5vw, 70px)!important
 
