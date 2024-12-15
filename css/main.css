@@ -751,6 +751,7 @@ html:root {
 }
 @media screen and (min-width: 1027px) {
   .container .header .header_section .section_nav .section_block {
+    position: static;
     justify-content: end;
     display: flex;
     width: 100%;
