@@ -1,6 +1,6 @@
 // const paginated_list = document.getElementById('paginated-list')
 
-// fetch("/js/news.json")
+// fetch("./news.json")
 // .then(response => response.json()
 // ).then(response =>{
 //     console.log(response)
