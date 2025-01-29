@@ -1,6 +1,6 @@
 // const paginated_list = document.getElementById('paginated-list')
 
-// fetch("./js/news.json")
+// fetch("https://raw.githubusercontent.com/shvets-maxx.github.io/Site_Stud/js/news.js")
 // .then(response => response.json()
 // ).then(response =>{
 //     console.log(response)
