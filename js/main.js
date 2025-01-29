@@ -62,8 +62,9 @@ SectionBurger.addEventListener('click', () => {
     logo.classList.toggle('hidden');
 
     // Встановлення стилів для section_block
-    const sectionStyles = window.getComputedStyle(section_block);
-    section_block.style.height = sectionStyles.height === '100vh' ? 'auto' : '100vh';
+    const sectionStyles = window.getComputedStyle(section_block).height;
+    section_block.style.height = section_block.style.height === '100vh' ? 'auto' : '100vh';
+    console.log(section_block.style.height)
     section_block.style.width = sectionStyles.width === '100vw' ? 'auto' : '100vw';
 
     const sectionBgColor = sectionStyles.backgroundColor;
@@ -102,3 +103,6 @@ document.addEventListener('mousemove', (e) => {
     bgPrometheus.style.transform = `translate(${(-x * 10)}px, ${(-y * 10)}px)`;
     prometheus.style.transform = `translate(${(-x * 20)}px, ${(-y * 20)}px)`;
 });
+
+
+

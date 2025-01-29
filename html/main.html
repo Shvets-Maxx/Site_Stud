@@ -14,7 +14,7 @@
         <header class="header">
             <section class="header_section">
                 <nav class="section_nav">
-                    <img class="nav_logo " src="../img/logoIATE.png" alt="">
+                    <img class="nav_logo " src="../img/logoIATE2.svg" alt="">
                     <div class="section_block">
                         <img class="burger_bg" src="../img/image 16.png" alt="">
                         <div class="section_burger">
@@ -23,12 +23,12 @@
                             <div class="burger_menu"></div>
                         </div>
                         <ul class="nav_list">
-                            <li>Головна</li>
-                            <li>Новини</li>
-                            <li>Актуальні опитування</li>
-                            <li>Студенту</li>
-                            <li>Магазин</li>
-                            <li>Про нас</li>
+                            <li><a href="/html/main.html">Головна</a></li>
+                            <li><a href="/html/news.html">Новини</a></li>
+                            <li><a href="/html/main.html">Актуальні опитування</a></li>
+                            <li><a href="/html/usefulTips.html">Студенту</a></li>
+                            <li><a href="">Магазин</a></li>
+                            <li><a href="/html/aboutUs.html">Про нас</a></li>
                             <li>
                                 <div class="swiper_button">
                                     <div class="swiper_wrapper-button">
@@ -53,8 +53,11 @@
                     </div>
                     <div class="section_block__logo">
                         <div class="section_photo">
-                            <img class="background" src="../img/bgProm.png" alt="">
+                            <!-- <img class="background" src="../img/bgProm.png" alt=""> -->
+                            <img class="background"  src="../img/Прометей.svg" alt="">
                             <img class="Prometheus" src="../img/88.png" alt="">
+                            
+              
                         </div>
                     </div>
                     <div class="swiper_button">
@@ -367,24 +370,24 @@
                     <div class="section_wrapper-contact">
                         <div class="empty_block">1</div>
                         <div class="section_block-text">
-                            <img src="../img/Phone.png" alt="">
+                            <img src="../img/phone2.svg" alt="">
                             <p>+380-666-6666</p>
                         </div>
                         <div class="section_block-text">
-                            <img src="../img/Mail.png" alt="">
+                            <img src="../img/envelope2.svg" alt="">
                             <p>Max2016@gmail.com</p>
                         </div>
                     </div>
                     <div class="section_block-info">
                         <div class="section_wrapper-info">
                             <p>Про нас</p>
-                            <p>Відділи</p>
-                            <p>Учасники</p>
+                            <p><a href="/html/aboutUs.html">Відділи</a></p>
+                            <p><a href="/html/People.html">Учасники</a></p>
                         </div>
                         <div class="section_wrapper-info">
                             <p>Підтримка</p>
-                            <p>Конфіденційність</p>
-                            <p>Анонімне звернення</p>
+                            <p><a href="/">Конфіденційність</a></p>
+                            <p><a href="/html/anonAppeal.html">Анонімне звернення</a></p>
                         </div>
                     </div>
                 </div>
@@ -398,10 +401,10 @@
                     <p class="section_text">By IT-відділ СР ІАТЕ</p>
                     <div class="section_line"></div>
                     <div class="section_networks">
-                        <img src="../img/Discord2.png" alt="">
-                        <img src="../img/Telegram2.png" alt="">
-                        <img src="../img/Social Linkedin2.png" alt="">
-                        <img src="../img/inst2.png" alt="">
+                        <a href=""><img src="../img/Discord2.png" alt=""></a>
+                        <a href=""><img src="../img/Telegram2.png" alt=""></a>
+                        <a href=""><img src="../img/Social Linkedin2.png" alt=""></a>
+                        <a href=""><img src="../img/inst2.png" alt=""></a>
                     </div>
                 </div>
                 <div class="section_block-underText">
@@ -417,44 +420,7 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-  <!-- Initialize Swiper -->
   <script>
-    // var swiper = new Swiper(".mySwiper-1", {
-    //   navigation: {
-    //     nextEl: ".next-1",
-    //     prevEl: ".prev-1",
-    //   },
-      
-    //         slidesPerView: 1,
-    //         spaceBetween: 20,
-    //         loop: true,
-    //         centeredSlides: true,
-    //         breakpoints: {
-    //         500: {
-    //         centeredSlides: false,
-    //         slidesPerView: 1.5,
-    //         spaceBetween: 20
-    //         },
-    //         721: {
-    //         slidesPerView: 2,
-    //         spaceBetween: 20,
-    //         centeredSlides: false,
-    //         },
-    //         1050: {
-    //         centeredSlides: true,
-    //         slidesPerView: 3,
-    //         spaceBetween: 20
-    //         },
-    //         1432: {
-    //         centeredSlides: false,
-    //         slidesPerView: 4,
-    //         spaceBetween: 20
-    //         },
-    //         1550: {
-    //         spaceBetween: 30
-    //         }
-    //     }
-    // });
     let swiper_1;
     let swiper_2;
     let swiper_3;
@@ -589,10 +555,8 @@ function checkScreenSize() {
     }
 }
 
-// Викликаємо функцію при завантаженні сторінки
 checkScreenSize();
 
-// Додаємо слухача події для зміни розміру екрану
 window.addEventListener("resize", checkScreenSize);
 
 

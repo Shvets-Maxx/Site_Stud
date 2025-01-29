@@ -1,0 +1,831 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Prosto+One&family=Zen+Dots&display=swap')
+button
+    border: none
+    background: none
+    padding: 0
+
+.swiper_wrapper-button:hover 
+        background: rgba(255, 117, 40, 1) !important
+        border-width:  1px 
+        border-color: none
+        color: #fff
+        cursor: pointer
+
+.swiper_button
+    width: auto
+    .swiper_wrapper-button
+        transition: background-color 0.3s ease, transform 0.3s ease
+        margin: 0 auto
+        padding: 10px 0
+        text-align: center
+        min-width: 150px
+        max-width: 200px 
+        height: min-content
+        border: 1px solid rgba(255, 117, 40, 1)
+        border-radius: 225px 
+        a
+            font: 400 24px 'Noto Sans'
+            color: #fff
+.h-100vh
+    height: 100vh
+    overflow: hidden
+.hidden
+    display: none !important
+
+.section_block-title
+    display: flex
+    align-items: center
+    width: 100%
+    .section_line1
+        width: 80px
+        border: 1px solid rgba(175, 137, 255, 1)
+    .section_title
+        white-space: nowrap
+        padding: 0 10px
+        font: 400 1.5rem 'Jura'
+        color: #fff
+    .section_line2
+        border: 1px solid rgba(249, 187, 83, 1)
+        width: 100%
+// html,body
+//     height: 100%
+
+.container
+    display: grid
+    grid-template-rows: auto 1fr auto
+    background: rgba(34, 34, 34, 1)
+    min-height: 100vh
+    .header
+        border-bottom: 2px solid rgba(249, 187, 83, 1)
+        padding: 20px 20px 0px
+        // min-height: 100vh
+        .header_section
+            min-height: 100%
+            display: flex
+            flex-direction: column
+            .section_nav
+                position: relative
+                margin-bottom: 30px
+                gap: 3.5vw
+                // padding: 20px 20px 0 20px 
+                display: flex
+                justify-content: space-between
+                .nav_logo
+                    display: block
+                    width: 100px
+                .section_block
+                    height: auto
+                    position: fixed
+                    display: flex
+                    align-items: center
+                    z-index: 555
+                    padding: 0
+                    .burger_bg
+                        display: none
+                        position: fixed
+                        width: 100%
+                        max-height: 600px
+                        min-height: 400px
+                        top: 400px //57%
+                        left: 50%
+                        transform: translate(-50% , -57%)
+                    .section_burger
+                        cursor: pointer
+                        position: fixed
+                        top: 20px
+                        right: 20px
+                        z-index: 55
+                        display: flex
+                        flex-direction: column
+                        gap: 6px
+                        .burger_menu
+                            border: 1.5px solid #fff
+                            border-radius: 30px
+                            width: 30px
+                            transition: transform 0.3s ease, opacity 0.3s ease
+                        .burger_menu.active:nth-child(1)
+                           transform: rotate(45deg) translate(6px, 6px)
+                        .burger_menu.active:nth-child(2)
+                            opacity: 0
+                        .burger_menu.active:nth-child(3)
+                            transform: rotate(-45deg) translate(7px, -7px)
+                        .burger_menu.active
+                            border-color: #D7C3FF
+                    .section_burger:hover .burger_menu
+                        border-color: #D7C3FF
+
+                .nav_list
+                    position: absolute
+                    top: 100px
+                    display: none
+                    li ,.swiper_button div a
+                        font: 400 24px 'Noto Sans'
+                        color: #fff
+                    li .swiper_button
+                        display: none
+                    li
+                        cursor: pointer
+                        margin-bottom: 25px
+                    li:hover 
+                        color: #FFC657
+                    li:last-child
+                        margin: 0
+                    li:last-child:hover a
+                        color: #ffff
+    .main
+        margin-bottom: 30px
+        margin-bottom: 20px
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        .main_section-info
+            display: flex
+            flex-direction: column
+            padding: 40px 0 40px 20px            
+            .section-info_container 
+                width: 100%
+                .section_block-aboutUs
+                    flex: 0 0 55%
+                    .section_title 
+                        h1
+                            font: 400 24px 'Prosto One'
+                            color: #D7C3FF
+                
+        .main_section-team
+            
+            .section_container
+                .section_block-title
+                    margin-bottom: 40px
+                    display: flex
+                    align-items: center
+                    .section_line2
+                        width: 100%
+            .section_block-title
+                display: flex
+                justify-self: center
+                margin-bottom: 30px
+                .title
+                    font: 400 24px 'Prosto One'
+                    color: #ff9153
+            .container_section-team
+                padding: 30px 20px 60px 20px
+                display: grid
+                grid-template-columns: repeat(auto-fit ,minmax(132px ,1fr))
+                justify-content: center
+                gap: 15px
+                .section_wrapper
+                    background: rgba(0, 0, 0, 0.67)
+                    width: 100%
+                    max-width: 390px
+                    .section_block
+                        display: flex
+                        flex-direction: column
+                        gap: 10px
+                        .section_photo-people
+                            width: 100%
+                    .section_name-block
+                        padding: 0 5px
+                        display: flex
+                        justify-content: space-between
+                        .block_social
+                            display: flex
+                            justify-content: space-between
+                            align-items: center
+                            gap: 2px
+                            img
+                                height: 15px
+                        p
+                            
+                            font: 400 12px 'Jura'
+                    .block_position
+                        gap: 25px
+                        padding: 0 5px 10px 5px
+                        display: flex
+                        align-items: flex-end
+                        justify-content: space-between
+                        p
+                            font: 400 10px 'Jura'
+                            color: #f9bb53
+                        .block_arrow
+                            img
+                                max-width: 28px
+    .footer
+        padding: 20px 20px 40px 20px
+        width: 100vw
+        background: rgba(0, 0, 0, 0.25)
+        overflow: hidden
+        .footer_section
+            display: grid
+            grid-template-rows: repeat(3,auto)
+            grid-template-columns: 1fr
+            grid-template-areas: "contact" "social" "underText"
+            grid-row-gap: 50px
+            .section_block-contact
+                grid-area: contact
+                // padding-right: 50px
+                height: min-content
+                justify-content: end
+                gap: 40px
+                .section_wrapper-contact
+                    margin-bottom: 30px
+                    display: flex
+                    flex-direction: column
+                    justify-content: space-between
+                    .empty_block
+                        opacity: 0
+                    .section_block-text
+                        display: flex
+                        align-items: end
+                        img
+                            margin-right: 20px
+                        p
+                            font: 400 .8125rem 'Noto Sans' 
+                            color: #fff
+                .section_block-info
+                    height: min-content
+                    gap: 40px
+                    display: flex
+                    .section_wrapper-info
+                        display: flex
+                        flex-direction: column
+                        gap: 15px
+                        p:first-child
+                            color:  rgba(129, 124, 116, 1)
+                            font-family: 'Prosto One'
+                        p
+                            font: 400 .8125rem 'Noto Sans'
+                            color: #fff
+                        p:hover a 
+                            color: #FFC657
+                       
+     
+            .section_block-social
+                grid-area: social
+                display: flex
+                flex-direction: column
+                gap: 20px
+                .section_block-logo
+                    display: flex
+                    gap: 6px
+                    img
+                        height: 60px
+                .section_text
+                    background: linear-gradient(90deg, #F9BB53 0%, #FF9153 77.96%, #BB91E4 143.99%)
+                    -webkit-background-clip: text
+                    -webkit-text-fill-color: transparent 
+                    font: 400 .9375rem 'Prosto One'
+                    color: #fff
+                .section_line
+                    height: 2px
+                    position: relative
+                    left: -30px
+                    width: 110vw
+                    height: 1px 
+                    background: #fff
+                .section_networks
+                    display: flex
+                    gap: 25px
+                    img
+                        width: 28px 
+                        height: 29px 
+                .section_div
+                    opacity: 0
+                    display: none
+            .section_block-underText
+                grid-area: underText
+                font: 400 .75rem 'Noto Sans'
+                color: #fff
+                .underText_first-text
+                    margin-bottom: 10px
+                .section_wrapper
+                    p:nth-child(1)
+                        margin-bottom: 5px
+
+
+
+
+@media screen and (min-width: 460px)
+    .container
+        .main
+            .main_section-info 
+                .section-info_container 
+                    .section_block-aboutUs 
+                        .section_title
+                            h1
+                                font-size: 32px
+                        .section_block-text p
+                            font-size: 16px
+                    .section_block-leader
+                        .section_container
+                            p
+                                font-size: 24px
+                            img
+                                max-width: 300px
+            .main_section-team
+                .section_block-title
+                    display: flex
+                    justify-self: center
+                    .title
+                        font: 400 32px 'Prosto One'
+                        color: #ff9153
+                .container_section-team
+                    display: grid
+                    grid-template-columns: repeat(auto-fill ,minmax(200px ,1fr))
+                    justify-items: center
+                    justify-content: center
+                    gap: 20px
+                    .section_wrapper
+                        max-width: 250px
+                        .section_block
+                            .section_name-block
+                                padding: 0 10px
+                                p
+                                    font-size: 16px
+                                .block_social
+                                    img
+                                        height: 20px
+                        .block_position
+                            padding: 0 10px 10px 10px
+                            p
+                                font-size: 12px
+                            .block_arrow img
+                                max-width: 40px
+        .section_block-title .section_title 
+            font: 400 32px "Jura"
+                                
+
+
+@media screen and (min-width: 630px)
+    .container
+        .main
+            min-height: 400px
+            min-height: calc(90vh - 100px)
+            .section_main
+                height: 100%
+                display: flex
+                justify-content: space-between
+                flex-direction: row
+                .section_container
+                .section_block-img
+                    display: flex
+                    flex-direction: column
+                    align-items: normal
+                    justify-content: start
+                    gap: 10px
+                    img
+                        height: 90%
+                        width: auto
+                    p
+                        padding: 0
+
+
+@media screen and (min-width: 840px)
+    .container
+        .header
+            .header_section
+                .header_block
+                    gap: 15px
+                    display: flex
+                    .section_block__text
+                        display: flex
+                        flex-direction: column
+                        justify-content: center
+                        width: 70%
+                        padding: 0
+                        .swiper_button
+                            padding: 0
+                            display: block
+                            .swiper_wrapper-button
+                                border: none
+                                margin: 0
+                                max-width: 150px
+                                background: linear-gradient(104.83deg, #BD5629 15.93%, #F9BB53 65.28%, #F9BB53 93.38%)  //, rgba(65, 71, 131, 0.67) 101.03%
+                                a
+                                    font-weight: 800
+                        .section_title
+                            font-size: 2rem
+                        .section_text
+                            font-size: 0.8125rem
+                            margin-bottom: 20px
+                    .section_block__logo
+                        margin: 0
+                        width: 100%
+                        .section_photo
+                            min-height: 250px
+                            // width: 200px
+                    .swiper_button
+                        display: none
+
+        .main
+            // padding: 20px 40px
+            .section_main
+
+                .section_container
+                    gap: 15vw
+                    .section_title
+                        h1
+                            font-size: 28px
+                    .section_block-text 
+                        p
+                            font-size: 14px
+                .section_block-img p
+                    font-size: 14px
+
+            .main_section-info
+                display: flex
+                flex-direction: column
+                gap: 30px
+                
+                .section-info_container 
+                    padding-right: 40px
+                    display: flex
+                    justify-content: space-between
+                    align-items: center
+                    .section_block-aboutUs
+                        width: auto
+                        margin-bottom: 0
+                        .section_block-text 
+                            p
+                                font: 400 16px "Noto Sans"
+                    .section_block-leader
+                        padding: 0
+                        height: min-content
+            .main_section-team
+                .container_section-team
+                    padding: 30px 40px 60px 40px
+                    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))
+                    .section_wrapper .section_block .section_name-block .block_social
+                        gap: 5px
+                        
+        .footer
+            padding: 30px 3vw 30px 20px
+            .footer_section
+                grid-template-columns: .5fr 1fr
+                grid-template-areas: "social contact" "underText underText"
+                grid-template-rows: repeat(2,min-content)
+                grid-row-gap: 50px 
+                .section_block-contact
+                    display: flex
+                    .section_wrapper-contact
+                        margin-bottom: 0
+                        .section_block-text
+                            margin: 0
+                .section_block-underText
+                    display: flex
+                    justify-content: space-between
+                    .underText_first-text
+                        margin: 0
+                    .section_wrapper
+                        display: flex
+                        gap: 100px
+                        p:nth-child(1)
+                            margin: 0
+                .section_block-social
+                    .section_line
+                        min-width: 270px
+                        width: 100%
+                        max-width: 400px
+                    .section_div
+                        display: block
+
+
+        
+@media screen and (min-width: 1027px)
+    html
+    .container
+        .header
+            .header_section
+                .section_nav
+                    gap: 12vw
+                    .section_block
+                        position: static
+                        justify-content: start
+                        display: flex
+                        width: 100%
+                        .section_burger
+                            display: none
+                        .nav_list
+                            max-width: none
+                            width: 100%
+                            position: static
+                            display: flex
+                            gap: 30px
+                            justify-content: space-between
+                            align-items: center
+                            li, li .swiper_button div a
+                                font: 400 16px 'Noto Sans'
+                                margin: 0
+                            li:nth-child(6)
+                                display: none
+                            li .swiper_button
+                                display: block
+                                padding: 0
+                                width: 200px
+                                .swiper_wrapper-button
+                                    padding: 10px 0
+                                    text-align: center
+                                    height: min-content
+                                    border: 1px solid rgba(255, 117, 40, 1)
+                                    border-radius: 225px
+        .main
+            .main_section-info
+                display: flex
+                flex-direction: column
+                gap: 30px
+                
+                .section-info_container 
+                    padding-right: 40px
+                    display: flex
+                    justify-content: space-between
+                    align-items: center
+                    .section_block-aboutUs
+                        width: auto
+                        // flex-basis: 60%
+                        margin-bottom: 0
+                        .section_block-text 
+                            p
+                                font: 400 16px "Noto Sans"
+                    .section_block-leader
+                        padding: 0
+                        height: min-content
+            .main_section-team
+                .container_section-team
+        // .section_block-title .section_title 
+        //     font: 400 26px "Jura"
+                    
+        .footer
+            padding: 30px 5vw 20px 30px
+            .footer_section
+                .section_block-contact
+                    .section_wrapper-contact
+                        .section_block-text
+                            p
+                                font-size: 14px
+                            img
+                    .section_block-info
+                        .section_wrapper-info
+                            p
+                                font-size: 14px
+                .section_block-social
+                    .section_text
+                        font-size: 14px
+
+                                    
+@media screen and (min-width: 1160px)
+    .container
+        .main
+            .main_section-team
+                .container_section-team
+                    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
+                    .section_wrapper
+                        max-width: 390px
+                        
+@media screen and (min-width: 1200px)
+    .container
+        .header
+            padding: 30px 40px 0 40px
+            .header_section
+                .section_nav
+                    .nav_logo
+                        height: 80px 
+                        width: auto
+                    .section_block
+                        .nav_list
+                            li .swiper_button 
+                                width: 230px
+                                .swiper_wrapper-button 
+                                    max-width: none
+
+        .main
+            .main_section-info
+                padding-left: 40px
+                .section-info_container
+                    .section_block-aboutUs
+                        .section_title
+                            h1
+                                font-size: 36px
+                        .section_block-text
+                            p
+                                font-size: 18px
+                        .section_photo
+                            width: 130px
+                    .section_block-leader
+                        .section_container
+                            p
+                                font-size: 28px
+                            img
+                                max-width: 350px
+            .main_section-team
+                .section_block-title
+                    .title
+                        font-size: 36px
+
+
+
+        .footer
+            .footer_section
+                .section_block-contact
+                    .section_wrapper-contact
+                        .section_block-text
+                            p
+                                font-size: 15px
+                            img
+                    .section_block-info
+                        .section_wrapper-info
+                            p
+                                font-size: 15px
+                .section_block-social
+                    .section_text
+                        font-size: 15px
+                .section_block-underText
+                    p
+                        font-size: 13px
+
+
+
+@media screen and (min-width: 1400px)
+    .container
+        .header
+            
+            .header_section .header_block .section_block__text .section_title 
+                font-size: 80px
+        .main
+            .main_section-info
+                .section-info_container
+                    
+                    .section_block-aboutUs
+                        .section_title
+                            h1
+                                font-size: 36px
+                        .section_block-text
+                            p
+                                font-size: 18px
+                        .section_photo
+                            width: 130px
+                    .section_block-leader
+                        .section_container
+                            p
+                                font-size: 32px
+                            img
+                                max-width: 400px
+            .main_section-team
+                
+                .section_block-title
+
+                    .title
+                        font-size: 40px
+                .container_section-team
+
+                    gap: 25px
+                    .section_wrapper
+                        .section_block
+                            .section_name-block
+                                p
+                                    font-size: 18px
+                                .block_social img
+                                    height: 20px
+                        .block_position
+                            p
+                                font-size: 14px
+                            .block_arrow img
+                                max-width: 45px
+
+        .section_block-title .section_title 
+            font: 400 32px "Jura"
+
+
+@media screen and (min-width: 1600px)
+    .container
+        .header
+            padding: 30px 60px 0 60px
+            .header_section
+                .section_nav
+                    li,.swiper_button div a
+                        font-size: clamp(16px, 1vw, 27px) !important
+                        .swiper_button
+                            width: clamp(250px, 17vw, 450px)!important
+                            div
+                                padding: 15px 0
+                                max-width: none
+                    .nav_logo
+                        width: auto
+                        height: 100px
+        .main
+            .main_section-info
+                padding-left: 60px
+                .section-info_container
+                    .section_block-aboutUs
+                        .section_title
+                            h1
+                                font-size: clamp(40px, 2.6vw, 64px)!important
+                                //font-size: 40px
+                        .section_block-text
+                            p
+                                font-size: clamp(20px, 1.3vw, 34px)!important
+                                //font-size: 20px
+                        .section_photo
+                            width: clamp(150px, 9vw, 210px)!important
+                            //width: 130px
+                            right: -5vw
+                            bottom: -5vw
+                    .section_block-leader
+                        .section_container
+                            p
+                                font-size: clamp(32px, 2.1vw, 55px)!important
+                                //font-size: 32px
+                            img
+                                width: 26vw
+                                max-width: 650px
+            .main_section-team
+                .section_block-title
+                    .title
+                        font-size: clamp(40px, 2.6vw, 64px)!important
+                .container_section-team
+                    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr))
+                    .section_wrapper
+                        .section_block
+                            .section_name-block
+                                p
+                                    font-size: 16px
+                                    font-size: clamp(16px, 1.3vw, 36px)!important
+                                .block_social img
+                                    height: 25px
+                        .block_position
+                            p
+                                font-size: 12px
+                                font-size: clamp(12px, .9vw, 25px)!important
+                            .block_arrow img
+                                max-width: 50px
+
+        .section_block-title .section_title 
+            font-size: clamp(36px, 2.5vw, 70px) !important
+
+        .footer
+            .footer_section
+                .section_block-contact
+                    .section_wrapper-contact
+                        .section_block-text
+                            p
+                                font-size: clamp(16px, 1.1vw, 32px)!important
+                            img
+                                width: clamp(31px, 2vw, 50px)!important
+                    .section_block-info
+                        .section_wrapper-info
+                            p
+                                font-size: clamp(16px, 1.1vw, 32px)!important
+                .section_block-social
+                    .section_block-logo
+                        img
+
+                            height: clamp(60px,4.2vw, 110px)!important
+                    .section_networks
+                        img
+                            width: auto
+                            height: clamp(28px,2vw, 53px)!important
+                    .section_text
+                        font-size:  clamp(16px, 1.1vw, 32px)!important
+                .section_block-underText
+                    p
+                        font-size:  clamp(14px, .8vw, 22px)!important
+
+                
+
+                    
+@media screen and (min-width: 1900px)
+    .container
+        .main
+            .section_main
+                height: 100%
+                .section_container
+                    .section_title h1 
+                        font-size: 52px
+                    .section_block-text
+                        p
+                            font-size: 24px
+                .section_block-img
+                    p
+                        font-size: 24px
+    
+
+
+
+@media screen and (min-width: 2000px)
+    .container .header .header_section .section_nav img
+        width: auto
+        height: 120px
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+

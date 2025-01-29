@@ -35,6 +35,7 @@ html:root
         max-width: 200px 
         height: min-content
         border: 1px solid rgba(255, 117, 40, 1)
+        transition: background-color 0.3s ease, transform 0.3s ease
         border-radius: 225px 
         a
             font: 400 .8125rem 'Noto Sans'
@@ -79,6 +80,7 @@ html:root
                     display: block
                     width: 100px
                 .section_block
+                    height: auto
                     position: fixed
                     display: flex
                     align-items: center
@@ -88,7 +90,7 @@ html:root
                         display: none
                         position: fixed
                         width: 100%
-                        max-height: 500px
+                        max-height: 600px
                         min-height: 400px
                         top: 400px //57%
                         left: 50%
@@ -130,7 +132,7 @@ html:root
                     li
                         cursor: pointer
                         margin-bottom: 25px
-                    li:hover 
+                    li a:hover 
                         color: #FFC657
                     li:last-child
                         margin: 0
@@ -446,7 +448,8 @@ html:root
                         display: flex
                         align-items: end
                         img
-                            margin-right: 20px
+                            width: 30px
+                            margin-right: 15px
                         p
                             font: 400 .8125rem 'Noto Sans' 
                             color: #fff
@@ -464,6 +467,9 @@ html:root
                         p
                             font: 400 .8125rem 'Noto Sans'
                             color: #fff
+                        p:hover a
+                            cursor: pointer
+                            color: #FFC657
                     // .section_wrapper-info:first-child
                     //     margin-right: 70px         
             .section_block-social
@@ -577,66 +583,61 @@ html:root
 
 @media screen and (min-width: 768px)
     .container
-        // .header
-        //     .section_nav
-        //         .section_block
-        //             .nav_list
-        //                 // li:nth-child(6)
-        //                 //     display: none
-        //                 // li .swiper_button
-        //                 //     padding: 0
-        //                 //     width: 180px
-        //                 //     .swiper_wrapper-button
-        //                 //         padding: 10px 0
-        //                 //         text-align: center
-        //                 //         height: min-content
-        //                 //         border: 1px solid rgba(255, 117, 40, 1)
-        //                 //         border-radius: 225px
-        //     .header_section
-        //         .header_block
-        //             // position: relative
-        //             // gap: 15px
-        //             // display: flex !important
-        //             .section_block__text
-        //                 // display: flex
-        //                 // flex-direction: column
-        //                 // justify-content: center
-        //                 // width: 100%
-        //                 // padding: 0
-        //                 .swiper_button
-        //                     // padding: 0
-        //                     // display: block
-        //                     // .swiper_wrapper-button
-        //                     //     border: none
-        //                     //     margin: 0
-        //                     //     max-width: 150px
-        //                     //     background: linear-gradient(104.83deg, #BD5629 15.93%, #F9BB53 65.28%, #F9BB53 93.38%)  //, rgba(65, 71, 131, 0.67) 101.03%
-        //                     //     a
-        //                     //         font-weight: 800
-        //                 .section_text
-        //             // .section_block__logo
-        //             //     margin: 0
-        //             //     width: 100%
-        //             //     height: min-content
-        //             //     .section_photo
-        //             //         min-height: 250px
-        //             //         // width: 200px
-        //             // .swiper_button
-        //             //     display: none
-        .main_section-advantages
-            .section_container
-                .section_wrapper
-                    .section_block-info
-                        display: block
-                        .section_block-text
-                            .section_title
-                                font-size: 18px
-                            .section_text
-                                font-size: 14px
-            .swiper_button
-                padding-left: 30px
-                .swiper_wrapper-button
-                    margin: 0
+        .header
+            .header_section
+                .header_block
+                    position: relative
+                    gap: 15px
+                    .section_block__text
+                        display: flex
+                        flex-direction: column
+                        justify-content: center
+                        width: 100%
+                        padding: 0
+                        .section_title
+                            font-size: 90px
+                        .section_text
+                            font-size: 22px
+                        .swiper_button
+                            padding: 0
+                            .swiper_wrapper-button
+                                border: none
+                                margin: 0
+                                max-width: 150px
+                                background: linear-gradient(104.83deg, #BD5629 15.93%, #F9BB53 65.28%, #F9BB53 93.38%)  //, rgba(65, 71, 131, 0.67) 101.03%
+                                a
+                                    font-weight: 800
+                    .section_block__logo
+                        width: 100%
+                        .section_photo
+                            min-height: 250px
+                            max-width: 700px
+                            img
+                                max-height: 45vh
+        .main
+            .main_section-advantages
+                .section_container
+                    .section_wrapper
+                        .section_block-info
+                            display: block
+                            .section_block-text
+                                .section_title
+                                    font-size: 18px
+                                .section_text
+                                    font-size: 14px
+                .swiper_button
+                    padding-left: 30px
+                    .swiper_wrapper-button
+                        margin: 0
+            .main_section-departaments
+                .mySwiper-1
+                    .swiper-wrapper
+                        .swiper-slide
+                            .slide_content
+                                max-width: 370px
+            
+                        .prev-3 , .next-3
+                            display: none
         .footer
             padding: 30px 3vw 30px 20px
             .footer_section
@@ -667,120 +668,10 @@ html:root
                         max-width: 400px
                     .section_div
                         display: block
-
-
     .section_block-title
         .section_title
             font: 400 26px'Jura'
 
-
-
-@media screen and (min-width: 768px)
-    html
-    .container
-        .header
-            .header_section
-                // .section_nav
-                //     .section_block
-                //         justify-content: end
-                //         display: flex
-                //         width: 100%
-                //         .section_burger
-                //             display: none
-                //         .nav_list
-                //             max-width: 720px
-                //             width: 100%
-                //             position: static
-                //             display: flex
-                //             gap: 15px
-                //             justify-content: space-between
-                //             align-items: center
-                //             li, li .swiper_button div a
-                //                 font: 400 14px 'Noto Sans'
-                //                 margin: 0
-                //             li:nth-child(6)
-                //                 display: none
-                //             li .swiper_button
-                //                 padding: 0
-                //                 width: 180px
-                //                 .swiper_wrapper-button
-                //                     padding: 10px 0
-                //                     text-align: center
-                //                     height: min-content
-                //                     border: 1px solid rgba(255, 117, 40, 1)
-                //                     border-radius: 225px
-                .header_block
-                    position: relative
-                    gap: 15px
-                    // display: flex !important
-                    .section_block__text
-                        display: flex
-                        flex-direction: column
-                        justify-content: center
-                        width: 100%
-                        padding: 0
-                        .section_title
-                            font-size: 90px
-                        .section_text
-                            font-size: 22px
-                        .swiper_button
-                            padding: 0
-                            // display: block
-                            .swiper_wrapper-button
-                                border: none
-                                margin: 0
-                                max-width: 150px
-                                background: linear-gradient(104.83deg, #BD5629 15.93%, #F9BB53 65.28%, #F9BB53 93.38%)  //, rgba(65, 71, 131, 0.67) 101.03%
-                                a
-                                    font-weight: 800
-                    .section_block__logo
-                        // margin: 0
-                        width: 100%
-                        // height: min-content
-                        .section_photo
-                            min-height: 250px
-                            max-width: 700px
-                            img
-                                max-height: 45vh
-                    .swiper_button
-                        // display: none
-
-        .main
-            .main_section-myProjects
-            .main_section-departaments
-                .mySwiper-1
-                    .swiper-wrapper
-                        .swiper-slide
-                            .slide_content
-                                max-width: 370px
-            
-                        .prev-3 , .next-3
-                            display: none
-
-            // .main_section-news
-            //     .mySwiper-2
-            //         .swiper-wrapper
-            //             display: grid
-            //             grid-template-columns: repeat(3,1fr)
-            //             grid-template-areas: "one one tw" "one one tr"
-            //             grid-column-gap: 50px
-            //             grid-row-gap: 20px
-            //             .swiper-slide:nth-child(1)
-            //                 grid-area: one
-            //             .swiper-slide:nth-child(2)
-            //                 grid-area: tw
-            //             .swiper-slide:nth-child(3)
-            //                 grid-area: tr
-            //             .swiper-slide
-            //                 height: auto
-            //                 .swiper_content
-            //                     max-width: none
-            //                     img
-            //         .prev-2 , .next-2
-            //             display: none
-            //     .swiper_button
-            //         padding-left: 30px
-            //         .swiper_wrapper-button
 
 
 @media screen and (min-width: 1053px)
@@ -805,39 +696,9 @@ html:root
         .header
             .header_section
                 .section_nav
-                    .section_block
-                        position: static
-                        justify-content: end
-                        display: flex
-                        width: 100%
-                        .section_burger
-                            display: none
-                        .nav_list
-                            max-width: 720px
-                            width: 100%
-                            position: static
-                            display: flex
-                            gap: 15px
-                            justify-content: space-between
-                            align-items: center
-                            li, li .swiper_button div a
-                                font: 400 14px 'Noto Sans'
-                                margin: 0
-                            li:nth-child(6)
-                                display: none
-                            li .swiper_button
-                                display: block
-                                padding: 0
-                                width: 180px
-                                .swiper_wrapper-button
-                                    padding: 10px 0
-                                    text-align: center
-                                    height: min-content
-                                    border: 1px solid rgba(255, 117, 40, 1)
-                                    border-radius: 225px
-                .section_nav
                     gap: 12vw
                     .section_block
+                        position: static
                         justify-content: start
                         display: flex
                         width: 100%
@@ -852,11 +713,20 @@ html:root
                             justify-content: space-between
                             align-items: center
                             li, li .swiper_button div a
-                                margin: 0
-                            li .swiper_button 
-                                width: 200px
-                            li
                                 font: 400 16px 'Noto Sans'
+                                margin: 0
+                            li:nth-child(6)
+                                display: none
+                            li .swiper_button
+                                display: block
+                                padding: 0
+                                width: 200px
+                                .swiper_wrapper-button
+                                    padding: 10px 0
+                                    text-align: center
+                                    height: min-content
+                                    border: 1px solid rgba(255, 117, 40, 1)
+                                    border-radius: 225px
                 .header_block
                     position: relative
                     gap: 60px
@@ -999,21 +869,18 @@ html:root
                         font-size: 14px
                       
 
-
-            
-
-
 @media screen and (min-width: 1200px)
 
     .container
         .header
-            padding: 30px 60px 0 60px
+            padding: 30px 40px 0 40px
             .header_section
                 .section_nav
+                    .nav_logo
+                        height: 80px
+                        width: auto
                     .section_block
                         .nav_list
-                            // li , li .swiper_button div a
-                            //     font-size: 14px
                             li .swiper_button 
                                 width: 230px
                                 .swiper_wrapper-button 
@@ -1062,8 +929,6 @@ html:root
                     padding: 0 60px   
                 .swiper_button
                     padding: 0 60px
-
-
         .footer
             .footer_section
                 .section_block-contact
@@ -1103,50 +968,43 @@ html:root
 
                         
 @media screen and (min-width: 1400px)
-    .container .header .header_section .section_nav .section_block .nav_list li
-        // font: 400 15px 'Noto Sans'
-    .container .header .header_section .section_nav .section_block .nav_list li .swiper_button div a 
-        // font-size: 16px
-    .container .header .header_section .section_nav .section_block .nav_list li .swiper_button 
-        // width: 270px
-    .container .header
-        padding: 30px 60px 0 60px
-    .container .main .main_section-advantages .section_container .section_wrapper .section_block-info .section_block-text .section_text 
-        // font-size: 18px
-    .container .main .main_section-advantages .section_container .section_wrapper .section_block-info .section_block-text .section_title 
-        // font-size: 22px
-    .container .main .main_section-advantages .section_container .section_wrapper .section_block-info .section_icon img 
-        height: 60px
-    .container .section_block-title .section_title 
-        font: 400 36px "Jura"
-    .container .main .main_section-departaments .mySwiper-1 .swiper-wrapper .swiper-slide .slide_content 
-        max-width: 450px
-    .container .main .main_section-departaments .mySwiper-1 .swiper-wrapper .swiper-slide .slide_content
-        height: auto
-        min-height: 280px
-        max-height: 370px
-    .container .main .main_section-events .section_container .mySwiper-3 .swiper-wrapper .swiper-slide .swiper_content .swiper_photo 
-        min-width: 350px
-        // max-width: 400px
-    .container .main .main_section-events .section_container .mySwiper-3 .swiper-wrapper .swiper-slide .swiper_content .swiper_wrapper .swiper_block-text .swiper_mainText p
-        font-size: 17px
-    .container .main .main_section-events .section_container .mySwiper-3 .swiper-wrapper .swiper-slide .swiper_content 
-        .swiper_wrapper 
-            .swiper_button .swiper_wrapper-button a 
-                font-size: 14px
-    .container .main .main_section-news .swiper_button .swiper_wrapper-button a
-        font-size: 14px
-    .container .main .main_section-myProjects .swiper_button .swiper_wrapper-button a
-        font-size: 14px
-        .swiper_titleText 
-            p:last-child
-                font-size: 14px
-            p:first-child
-                font-size: 17px
-    .container .header .header_section .header_block 
-        .section_block__text 
-            .section_title 
+    .container
+        .header
+            padding: 30px 60px 0 60px
+            .header_section .header_block .section_block__text .section_title 
                 font-size: 100px
+
+        .main
+            .main_section-advantages .section_container .section_wrapper .section_block-info .section_icon img 
+                height: 60px
+            .main_section-departaments .mySwiper-1 .swiper-wrapper .swiper-slide .slide_content 
+                max-width: 450px
+                height: auto
+                min-height: 280px
+                max-height: 370px
+            .main_section-events .section_container .mySwiper-3 .swiper-wrapper .swiper-slide .swiper_content 
+                .swiper_photo 
+                    min-width: 350px
+                .swiper_wrapper .swiper_block-text .swiper_mainText p
+                    font-size: 17px
+            .main_section-events .section_container .mySwiper-3 .swiper-wrapper .swiper-slide .swiper_content .swiper_wrapper .swiper_button .swiper_wrapper-button a 
+                font-size: 14px
+            .main_section-news .swiper_button .swiper_wrapper-button a
+                font-size: 14px
+            .main_section-myProjects .swiper_button .swiper_wrapper-button a
+                font-size: 14px
+                .swiper_titleText 
+                    p:last-child
+                        font-size: 14px
+                    p:first-child
+                        font-size: 17px
+
+        .section_block-title .section_title 
+            font: 400 36px "Jura"
+
+
+
+
 
 
 
@@ -1161,6 +1019,7 @@ html:root
 @media screen and (min-width: 1600px)
     .container
         .header
+            padding: 30px 60px 0 60px
             .header_section
                 .section_nav
                     li,.swiper_button div a
@@ -1304,10 +1163,6 @@ html:root
                 .section_block-underText
                     p
                         font-size:  clamp(14px, .8vw, 22px)!important
-
-                
-
-
     .section_block-title
         .section_title 
             font-size:  clamp(36px, 2.5vw, 70px)!important

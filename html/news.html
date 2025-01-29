@@ -14,52 +14,96 @@
     }
 
     .pagination-container {
-    
+    padding: 15px;
+    border-radius: 50px;
+    background: #1A1818;
     display: flex;
     align-items: center;
-    /* position: absolute; */
     bottom: 0;
-    padding: 1rem 0;
+    gap: 20px;
     justify-content: center;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    position: absolute;
     }
 
     .pagination-number,
     .pagination-button{
-    font-size: 1.1rem;
     background-color: transparent;
     border: none;
-    margin: 0.25rem 0.25rem;
     cursor: pointer;
-    height: 2.5rem;
-    width: 2.5rem;
-    border-radius: .2rem;
+    border-radius: 20px;
     } 
-    .pagination-number:hover,
-    .pagination-button:not(.disabled):hover {
-    background: #fff;
+    .pagination-button{
+        display: flex;
+    }
+    .pagination-button img{
+        height: 20px;
+    }
+    .pagination-number:hover {
+    background: #FF7528;
     }
     .pagination-number.active {
     color: #fff;
-    background: #0085b6;
+    background: #FF7528;
+    }
+    .pagination-number{
+        height: 20px;
+        width: 20px;
     }
     #paginated-list li{
         color: #fff;
         width: 100%;
         max-width: 250px;
+        /* height: 53.6vw; */
     }
     #paginated-list{
         display: grid;
-        grid-template-columns: repeat(2,1fr) ;
-        grid-template-rows: repeat(2,200px) ;
+        /* grid-template-columns: repeat(2,1fr) ; */
+        grid-template-columns: repeat(2, minmax(100px, 1fr));
+        grid-template-rows: repeat(2, minmax(100px, 1fr));
         justify-items: center;
-        gap: 20px;
-        width: 100vw;
+        gap: 10px;
+        align-items: stretch;
         justify-content: center;
-        padding: 0 20px;
         max-width: 560px;  
+        margin-bottom: 50px;
+        
     }
-    .slide_photo{
+    #pagination-numbers{
         display: flex;
+        gap: 10px;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    @media screen and (min-width: 1024px){
+        .pagination-number{
+            font-size: 16px;
+            height: 25px;
+            width: 25px;
+        }
+    }
+    @media screen and (min-width: 1600px){
+        .pagination-number{
+            font-size: 20px;
+            height: 30px;
+            width: 30px;
+        }
+    }
+    @media screen and (min-width: 2000px){
+        .pagination-number{
+            font-size: 24px;
+            height: 40px;
+            width: 40px;
+        }
+    }
+
+    .slide_photo{
+        display: grid;
+        /* display: flex; */
+        flex-direction: column;
+        justify-content: end;
         align-items: end;
         background-repeat: no-repeat;
         height: 100%;
@@ -67,9 +111,14 @@
         background-position: center;
         width: 100% !important;   
         border-radius: 20px;
+        overflow: hidden;
+    }
+    .slide_photo img{
+        grid-area: 1/1;
+        width: 100%;
     }
     .slide_text{
-        border-radius: 0 0 20px 20px;
+        grid-area: 1/1;
         background: rgba(0,0,0, 0.26);
         display: flex;
         align-items: end;
@@ -107,23 +156,25 @@
         <header class="header">
             <section class="header_section">
                 <nav class="section_nav">
-                    <img class="nav_logo" src="../img/logoIATE.png" alt="">
+                    <img class="nav_logo " src="../img/logoIATE2.svg" alt="">
                     <div class="section_block">
+                        <img class="burger_bg" src="../img/image 16.png" alt="">
                         <div class="section_burger">
                             <div class="burger_menu"></div>
                             <div class="burger_menu"></div>
                             <div class="burger_menu"></div>
                         </div>
                         <ul class="nav_list">
-                            <li>Головна</li>
-                            <li>Новини</li>
-                            <li>Актуальні опитування</li>
-                            <li>Студенту</li>
-                            <li>Магазин</li>
+                            <li><a href="/html/main.html">Головна</a></li>
+                            <li><a href="/html/news.html">Новини</a></li>
+                            <li><a href="/html/main.html">Актуальні опитування</a></li>
+                            <li><a href="/html/usefulTips.html">Студенту</a></li>
+                            <li><a href="">Магазин</a></li>
+                            <li><a href="/html/aboutUs.html">Про нас</a></li>
                             <li>
                                 <div class="swiper_button">
                                     <div class="swiper_wrapper-button">
-                                        <a href="/">Стати учасником</a>
+                                        <a class="nav_link" href="/">Стати учасником</a>
                                     </div>
                                 </div>
                             </li>
@@ -139,8 +190,10 @@
                 </div>
                 <div class="section_wrraper">
                     <ul id="paginated-list" data-current-page="1" aria-live="polite">
-                        <li>
-                            <div class="slide_photo" style="background-image: url(../img/newsPhoto-2.png);">
+
+                        <!-- <li>
+                            <div class="slide_photo" >
+                                <img src="../img/newsPhoto-6.png" alt="">
                                 <div class="slide_text">
                                     <div class="text">
                                         <p>Збір на пікап <br> випускнику НН ІАТЕ</p>
@@ -150,112 +203,26 @@
                                     </div>
                                 </div>
                             </div>
-                        </li>
-                        <li>
-                            <div class="slide_photo" style="background-image: url(../img/newsPhoto-3.png);">
-                                <div class="slide_text">
-                                    <div class="text">
-                                        <p>Романтичний <br>кіноперегляд на День Закоханих</p>
-                                    </div>
-                                    <div class="date">
-                                        <p>07.03.2024</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="slide_photo" style="background-image: url(../img/newsPhoto-4.png);">
-                                <div class="slide_text">
-                                    <div class="text">
-                                        <p>Маджента</p>
-                                    </div>
-                                    <div class="date">
-                                        <p>07.03.2024</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="slide_photo" style="background-image: url(../img/newsPhoto-7.png);">
-                                <div class="slide_text">
-                                    <div class="text">
-                                        <p>На сайті інституту<br> вже оприлюднено рейтингові списки</p>
-                                    </div>
-                                    <div class="date">
-                                        <p>07.03.2024</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="slide_photo" style="background-image: url(../img/newsPhoto-6.png);">
-                                <div class="slide_text">
-                                    <div class="text">
-                                        <p>Благодійний концерт<br> на честь Міжнародного </p>
-                                    </div>
-                                    <div class="date">
-                                        <p>07.03.2024</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="slide_photo" style="background-image: url(../img/newsPhoto-5.png);">
-                                <div class="slide_text">
-                                    <div class="text">
-                                        <p>Романтичний<Br> кіноперегляд на День Закоханих</p>
-                                    </div>
-                                    <div class="date">
-                                        <p>07.03.2024</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="slide_photo" style="background-image: url(../img/newsPhoto-8.png);">
-                                <div class="slide_text">
-                                    <div class="text">
-                                        <p>Ми раді оголосити<Br> вам про відкриття нашого </p>
-                                    </div>
-                                    <div class="date">
-                                        <p>07.03.2024</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="slide_photo" style="background-image: url(../img/newsPhoto-1.png);">
-                                <div class="slide_text">
-                                    <div class="text">
-                                        <p>Відбулася<br> довгоочікувана подія...</p>
-                                    </div>
-                                    <div class="date">
-                                        <p>07.03.2024</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>I</li>
-                        <li>Item 3</li>
-                        <li>Item 4</li>
-                        <li>Item 5</li>
-                        <li>Item 6</li>
-                        <li>Item 7</li>
-                        <li>Item 8</li>
+                        </li> -->
                     </ul>
-                    <nav class="pagination-container">
-                        <button class="pagination-button" id="prev-button" aria-label="Previous page" title="Previous page">
-                        &lt;
-                        </button>
-    
-                        <div id="pagination-numbers">
-    
-                        </div>
-    
-                        <button class="pagination-button" id="next-button" aria-label="Next page" title="Next page">
-                        &gt;
-                        </button>
-                    </nav>
+                    <div class="pagination_wrapper">
+                        <nav class="pagination-container">
+                            <button class="pagination-button" id="prev-button" aria-label="Previous page" title="Previous page">
+                            <!-- &lt; -->
+                             <img src="../img/Vector1.svg" alt="">
+                            </button>
+        
+                            <div id="pagination-numbers">
+        
+                            </div>
+        
+                            <button class="pagination-button" id="next-button" aria-label="Next page" title="Next page">
+                            <!-- &gt; -->
+                             <img src="../img/Vector2.svg" alt="">
+                            </button>
+                        </nav>
+                    </div>
+                    
                 </div>
                 
             </section>
@@ -264,31 +231,31 @@
             <section class="footer_section">
                 <div class="section_block-contact">
                     <div class="section_wrapper-contact">
-                        <div class="">1</div>
+                        <div class="empty_block">1</div>
                         <div class="section_block-text">
-                            <img src="../img/Phone.png" alt="">
+                            <img src="../img/phone2.svg" alt="">
                             <p>+380-666-6666</p>
                         </div>
                         <div class="section_block-text">
-                            <img src="../img/Mail.png" alt="">
+                            <img src="../img/envelope2.svg" alt="">
                             <p>Max2016@gmail.com</p>
                         </div>
                     </div>
                     <div class="section_block-info">
                         <div class="section_wrapper-info">
                             <p>Про нас</p>
-                            <p>Відділи</p>
-                            <p>Учасники</p>
+                            <p><a href="/html/aboutUs.html">Відділи</a></p>
+                            <p><a href="/html/People.html">Учасники</a></p>
                         </div>
                         <div class="section_wrapper-info">
                             <p>Підтримка</p>
-                            <p>Конфіденційність</p>
-                            <p>Анонімне звернення</p>
+                            <p><a href="/">Конфіденційність</a></p>
+                            <p><a href="/html/anonAppeal.html">Анонімне звернення</a></p>
                         </div>
                     </div>
                 </div>
                 <div class="section_block-social">
-                    <div class="section_div" >pdfd</div>
+                    <div class="section_div" ></div>
                     <div class="section_block-logo">
                         <img src="../img/logosite2.png" alt="">
                         <img src="../img/iate2.png" alt="">
@@ -297,14 +264,14 @@
                     <p class="section_text">By IT-відділ СР ІАТЕ</p>
                     <div class="section_line"></div>
                     <div class="section_networks">
-                        <img src="../img/Discord2.png" alt="">
-                        <img src="../img/Telegram2.png" alt="">
-                        <img src="../img/Social Linkedin2.png" alt="">
-                        <img src="../img/inst2.png" alt="">
+                        <a href=""><img src="../img/Discord2.png" alt=""></a>
+                        <a href=""><img src="../img/Telegram2.png" alt=""></a>
+                        <a href=""><img src="../img/Social Linkedin2.png" alt=""></a>
+                        <a href=""><img src="../img/inst2.png" alt=""></a>
                     </div>
                 </div>
                 <div class="section_block-underText">
-                    <p>Copyright 2024. All rights reserved</p>
+                    <p class="underText_first-text">Copyright 2024. All rights reserved</p>
                     <div class="section_wrapper">
                         <p>ggggggggg@lll.kpi.ua</p>
                         <p>+38(097) 000-00-00</p>
@@ -314,20 +281,416 @@
             </section>
         </footer>
     </div>
+    <script src="../js/main.js"></script>
+    <script src="../js/news.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
     <script>
+        // const paginationNumbers = document.getElementById("pagination-numbers");
+        // const paginatedList = document.getElementById("paginated-list");
+        // const listItems = paginatedList.querySelectorAll("li");
+        // const nextButton = document.getElementById("next-button");
+        // const prevButton = document.getElementById("prev-button");
+
+        // let paginationLimit;
+
+        // const setPaginationLimit = () => {
+        //     if (window.innerWidth > 1024) {
+        //         paginationLimit = 8;
+        //     } else if (window.innerWidth > 700) {
+        //         paginationLimit = 6;
+        //     } else if (window.innerWidth > 320) {
+        //         paginationLimit = 4;
+        //     }
+        // };
+        // setPaginationLimit();
+        // window.addEventListener("resize", () => {
+        //     setPaginationLimit();
+        //     setCurrentPage(1); // Reset pagination on resize
+        // });
+
+        
+
+        // const pageCount = Math.ceil(listItems.length / paginationLimit);
+        // let currentPage = 1;
+
+        // const disableButton = (button) => {
+        //     button.classList.add("disabled");
+        //     button.setAttribute("disabled", true);
+        // };
+
+        // const enableButton = (button) => {
+        //     button.classList.remove("disabled");
+        //     button.removeAttribute("disabled");
+        // };
+
+        // const handlePageButtonsStatus = () => {
+        //     if (currentPage === 1) {
+        //         disableButton(prevButton);
+        //     } else {
+        //         enableButton(prevButton);
+        //     }
+
+        //     if (pageCount === currentPage) {
+        //         disableButton(nextButton);
+        //     } else {
+        //         enableButton(nextButton);
+        //     }
+        // };
+
+        // const appendPageNumber = (index) => {
+        //     const pageNumber = document.createElement("button");
+        //     pageNumber.className = "pagination-number";
+        //     pageNumber.innerHTML = index;
+        //     pageNumber.setAttribute("page-index", index);
+        //     pageNumber.setAttribute("aria-label", "Page " + index);
+
+        //     if (index === currentPage) {
+        //         pageNumber.classList.add("active");
+        //     }
+
+        //     paginationNumbers.appendChild(pageNumber);
+        // };
+
+        // const getPaginationNumbers = () => {
+        //     paginationNumbers.innerHTML = ""; // Clear pagination numbers
+
+        //     appendPageNumber(1); // Always show the first page
+
+        //     const dynamicButtons = 4; // Number of dynamic buttons
+        //     let start = Math.max(2, currentPage - Math.floor(dynamicButtons / 2));
+        //     let end = start + dynamicButtons - 1;
+
+        //     if (end >= pageCount) {
+        //         end = pageCount - 1;
+        //         start = Math.max(2, end - dynamicButtons + 1);
+        //     }
+
+        //     for (let i = start; i <= end; i++) {
+        //         appendPageNumber(i);
+        //     }
+
+        //     if (pageCount > 1) {
+        //         appendPageNumber(pageCount); // Always show the last page
+        //     }
+        // };
+
+        // const setCurrentPage = (pageNum) => {
+        //     currentPage = pageNum;
+
+        //     handlePageButtonsStatus();
+        //     getPaginationNumbers(); // Update pagination numbers
+
+        //     const prevRange = (pageNum - 1) * paginationLimit;
+        //     const currRange = pageNum * paginationLimit;
+
+        //     listItems.forEach((item, index) => {
+        //         item.classList.add("hidden");
+        //         if (index >= prevRange && index < currRange) {
+        //             item.classList.remove("hidden");
+        //         }
+        //     });
+        // };
+
+        // window.addEventListener("load", () => {
+        //     getPaginationNumbers();
+        //     setCurrentPage(1);
+
+        //     prevButton.addEventListener("click", () => {
+        //         setCurrentPage(currentPage - 1);
+        //     });
+
+        //     nextButton.addEventListener("click", () => {
+        //         setCurrentPage(currentPage + 1);
+        //     });
+
+        //     paginationNumbers.addEventListener("click", (e) => {
+        //         const target = e.target;
+        //         if (target.classList.contains("pagination-number")) {
+        //             const pageIndex = Number(target.getAttribute("page-index"));
+        //             setCurrentPage(pageIndex);
+        //         }
+        //     });
+        // });
+    </script>
+    <!-- <script>
         const paginationNumbers = document.getElementById("pagination-numbers");
+        const paginatedList = document.getElementById("paginated-list");
+        const listItems = paginatedList.querySelectorAll("li");
+        const nextButton = document.getElementById("next-button");
+        const prevButton = document.getElementById("prev-button");
+
+        let paginationLimit;
+
+        const setPaginationLimit = () => {
+            if (window.innerWidth > 1024) {
+                paginationLimit = 8;
+            } else if (window.innerWidth > 700) {
+                paginationLimit = 6;
+            } else if (window.innerWidth > 320) {
+                paginationLimit = 4;
+            }
+        };
+
+        setPaginationLimit();
+        window.addEventListener("resize", () => {
+            setPaginationLimit();
+            setCurrentPage(1); // Reset pagination on resize
+        });
+
+        const pageCount = Math.ceil(listItems.length / paginationLimit);
+        let currentPage = 1;
+
+        const disableButton = (button) => {
+            button.classList.add("disabled");
+            button.setAttribute("disabled", true);
+        };
+
+        const enableButton = (button) => {
+            button.classList.remove("disabled");
+            button.removeAttribute("disabled");
+        };
+
+        const handlePageButtonsStatus = () => {
+            if (currentPage === 1) {
+                disableButton(prevButton);
+            } else {
+                enableButton(prevButton);
+            }
+
+            if (pageCount === currentPage) {
+                disableButton(nextButton);
+            } else {
+                enableButton(nextButton);
+            }
+        };
+
+        const handleActivePageNumber = () => {
+            document.querySelectorAll(".pagination-number").forEach((button) => {
+                button.classList.remove("active");
+                const pageIndex = Number(button.getAttribute("page-index"));
+                if (pageIndex === currentPage) {
+                    button.classList.add("active");
+                }
+            });
+        };
+
+        const appendPageNumber = (index) => {
+            const pageNumber = document.createElement("button");
+            pageNumber.className = "pagination-number";
+            pageNumber.innerHTML = index;
+            pageNumber.setAttribute("page-index", index);
+            pageNumber.setAttribute("aria-label", "Page " + index);
+
+            paginationNumbers.appendChild(pageNumber);
+        };
+
+        const getPaginationNumbers = () => {
+            paginationNumbers.innerHTML = ""; // Clear pagination numbers
+
+            appendPageNumber(1); // Always show the first page
+
+            const dynamicStart = Math.max(2, currentPage - 2); // Dynamic block start
+            const dynamicEnd = Math.min(pageCount - 1, currentPage + 1); // Dynamic block end
+
+            for (let i = dynamicStart; i <= dynamicEnd; i++) {
+                appendPageNumber(i);
+            }
+
+            appendPageNumber(pageCount); // Always show the last page
+        };
+
+        const setCurrentPage = (pageNum) => {
+            currentPage = pageNum;
+
+            handleActivePageNumber();
+            handlePageButtonsStatus();
+            getPaginationNumbers(); // Update pagination numbers
+
+            const prevRange = (pageNum - 1) * paginationLimit;
+            const currRange = pageNum * paginationLimit;
+
+            listItems.forEach((item, index) => {
+                item.classList.add("hidden");
+                if (index >= prevRange && index < currRange) {
+                    item.classList.remove("hidden");
+                }
+            });
+        };
+
+        window.addEventListener("load", () => {
+            getPaginationNumbers();
+            setCurrentPage(1);
+
+            prevButton.addEventListener("click", () => {
+                setCurrentPage(currentPage - 1);
+            });
+
+            nextButton.addEventListener("click", () => {
+                setCurrentPage(currentPage + 1);
+            });
+
+            paginationNumbers.addEventListener("click", (e) => {
+                const target = e.target;
+                if (target.classList.contains("pagination-number")) {
+                    const pageIndex = Number(target.getAttribute("page-index"));
+                    setCurrentPage(pageIndex);
+                }
+            });
+        });
+    </script> -->
+    <!-- <script>
+        const paginationNumbers = document.getElementById("pagination-numbers");
+        const paginatedList = document.getElementById("paginated-list");
+        const listItems = paginatedList.querySelectorAll("li");
+        const nextButton = document.getElementById("next-button");
+        const prevButton = document.getElementById("prev-button");
+
+        let paginationLimit;
+
+        const setPaginationLimit = () => {
+            if (window.innerWidth > 1024) {
+                paginationLimit = 8;
+            } else if (window.innerWidth > 700) {
+                paginationLimit = 6;
+            } else if (window.innerWidth > 320) {
+                paginationLimit = 4;
+            }
+        };
+
+        setPaginationLimit();
+        window.addEventListener("resize", () => {
+            setPaginationLimit();
+            setCurrentPage(1); // Перевстановлення пагінації при зміні розміру екрану
+        });
+
+        const pageCount = Math.ceil(listItems.length / paginationLimit);
+        let currentPage = 1;
+
+        const disableButton = (button) => {
+            button.classList.add("disabled");
+            button.setAttribute("disabled", true);
+        };
+
+        const enableButton = (button) => {
+            button.classList.remove("disabled");
+            button.removeAttribute("disabled");
+        };
+
+        const handlePageButtonsStatus = () => {
+            if (currentPage === 1) {
+                disableButton(prevButton);
+            } else {
+                enableButton(prevButton);
+            }
+
+            if (pageCount === currentPage) {
+                disableButton(nextButton);
+            } else {
+                enableButton(nextButton);
+            }
+        };
+
+        const handleActivePageNumber = () => {
+            document.querySelectorAll(".pagination-number").forEach((button) => {
+                button.classList.remove("active");
+                const pageIndex = Number(button.getAttribute("page-index"));
+                if (pageIndex === currentPage) {
+                    button.classList.add("active");
+                }
+            });
+        };
+
+        const appendPageNumber = (index) => {
+            const pageNumber = document.createElement("button");
+            pageNumber.className = "pagination-number";
+            pageNumber.innerHTML = index;
+            pageNumber.setAttribute("page-index", index);
+            pageNumber.setAttribute("aria-label", "Page " + index);
+
+            paginationNumbers.appendChild(pageNumber);
+        };
+
+        const getPaginationNumbers = () => {
+            paginationNumbers.innerHTML = ""; // Очищення кнопок пагінації
+
+            appendPageNumber(1); // Завжди додаємо першу сторінку
+
+            const startPage = Math.max(2, currentPage - 2); // Початок динамічного блоку
+            const endPage = Math.min(pageCount - 1, currentPage + 2); // Кінець динамічного блоку
+
+            if (startPage > 2) {
+                const dots = document.createElement("span");
+                dots.className = "dots";
+                dots.innerHTML = "...";
+                paginationNumbers.appendChild(dots);
+            }
+
+            for (let i = startPage; i <= endPage; i++) {
+                appendPageNumber(i);
+            }
+
+            if (endPage < pageCount - 1) {
+                const dots = document.createElement("span");
+                dots.className = "dots";
+                dots.innerHTML = "...";
+                paginationNumbers.appendChild(dots);
+            }
+
+            appendPageNumber(pageCount); // Завжди додаємо останню сторінку
+        };
+
+        const setCurrentPage = (pageNum) => {
+            currentPage = pageNum;
+
+            handleActivePageNumber();
+            handlePageButtonsStatus();
+            getPaginationNumbers(); // Оновлення кнопок пагінації при зміні сторінки
+
+            const prevRange = (pageNum - 1) * paginationLimit;
+            const currRange = pageNum * paginationLimit;
+
+            listItems.forEach((item, index) => {
+                item.classList.add("hidden");
+                if (index >= prevRange && index < currRange) {
+                    item.classList.remove("hidden");
+                }
+            });
+        };
+
+        window.addEventListener("load", () => {
+            getPaginationNumbers();
+            setCurrentPage(1);
+
+            prevButton.addEventListener("click", () => {
+                setCurrentPage(currentPage - 1);
+            });
+
+            nextButton.addEventListener("click", () => {
+                setCurrentPage(currentPage + 1);
+            });
+
+            paginationNumbers.addEventListener("click", (e) => {
+                const target = e.target;
+                if (target.classList.contains("pagination-number")) {
+                    const pageIndex = Number(target.getAttribute("page-index"));
+                    setCurrentPage(pageIndex);
+                }
+            });
+        });
+    </script> -->
+    <!-- <script>
+        const paginationNumbers = document.getElementById("pagination-numbers");
+        const paginationNumber = document.querySelectorAll("pagination-number");
         const paginatedList = document.getElementById("paginated-list");
         const listItems = paginatedList.querySelectorAll("li");
         const nextButton = document.getElementById("next-button");
         const prevButton = document.getElementById("prev-button");
         let paginationLimit ;
         const setPaginationLimit = () => {
-            if(window.innerWidth > 1300){
+            if(window.innerWidth > 1024){
                 paginationLimit = 8
             }
-            else if (window.innerWidth > 800) {
+            else if (window.innerWidth > 700) {
                 paginationLimit = 6;
             } else if (window.innerWidth > 320) {
                 paginationLimit = 4;
@@ -386,9 +749,16 @@
 
         const getPaginationNumbers = () => {
         for (let i = 1; i <= pageCount; i++) {
-            appendPageNumber(i);
+            if(i< 6){
+                appendPageNumber(i);
+            }
+            if(!(pageCount > i)){
+                appendPageNumber(pageCount);
+            }
         }
         };
+
+
 
         const setCurrentPage = (pageNum) => {
         currentPage = pageNum;
@@ -430,7 +800,7 @@
         });
         });
 
-</script>
+</script> -->
 </body>
 </html>
 <!-- <div class="swiper mySwiper">
